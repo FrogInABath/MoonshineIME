@@ -73,13 +73,13 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
     implementation 'androidx.preference:preference:1.2.1'
 
-    // Pinned to 0.4.4 to prevent LiteRT duplicate class collisions
+    // TensorFlow Lite pinned to prevent LiteRT duplicate class collisions
     implementation 'org.tensorflow:tensorflow-lite:2.17.0'
     implementation 'org.tensorflow:tensorflow-lite-support:0.4.4'
     implementation 'com.github.gkonovalov.android-vad:webrtc:2.0.10'
     implementation 'com.github.houbb:opencc4j:1.14.0'
     implementation 'com.github.woheller69:FreeDroidWarn:+'
 
-    // Sherpa-ONNX 32-bit native Android runtime via JitPack
-    implementation 'com.github.k2-fsa:sherpa_onnx_android_armeabi:v2.0.1'
+    // Sherpa-ONNX directly from local AAR
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
 }
