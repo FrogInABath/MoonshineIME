@@ -70,6 +70,11 @@ dependencies {
     implementation 'com.github.houbb:opencc4j:1.14.0'
     implementation 'com.github.woheller69:FreeDroidWarn:+'
 
-    // Load Sherpa-ONNX AAR from the app/libs directory
+    // TensorFlow Lite (needed by WhisperEngineJava.java)
+    implementation 'org.tensorflow:tensorflow-lite:2.15.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.4'
+
+    // Sherpa-ONNX local binary AAR
     implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
+}
 }
