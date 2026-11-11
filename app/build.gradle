@@ -77,4 +77,3 @@ dependencies {
     // Sherpa-ONNX local binary AAR
     implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
 }
-}
