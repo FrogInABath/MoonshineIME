@@ -80,6 +80,6 @@ dependencies {
     implementation 'com.github.houbb:opencc4j:1.14.0'
     implementation 'com.github.woheller69:FreeDroidWarn:+'
 
-    // Sherpa-ONNX Runtime
-    implementation 'com.k2fsa.sherpa.onnx:sherpa-onnx:1.10.42'
+    // Sherpa-ONNX Runtime via JitPack
+    implementation 'com.github.k2-fsa:sherpa-onnx:v2.0.1'
 }
