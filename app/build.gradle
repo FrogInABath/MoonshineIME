@@ -71,5 +71,5 @@ dependencies {
     implementation 'com.github.woheller69:FreeDroidWarn:+'
 
     // Ensure ONLY ONE sherpa-onnx armeabi-v7a AAR is in the libs folder
-    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
+   implementation 'com.github.k2-fsa:sherpa-onnx:v1.10.41'
 }
