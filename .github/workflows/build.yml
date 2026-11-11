@@ -24,6 +24,13 @@ jobs:
         with:
           gradle-version: '8.13'
 
+      # Download prebuilt Sherpa-ONNX AAR into app/libs before compiling Kotlin
+      - name: Download Sherpa-ONNX AAR
+        run: |
+          mkdir -p app/libs
+          curl -L -o app/libs/sherpa-onnx.aar https://github.com/k2-fsa/sherpa-onnx/releases/download/v2.0.1/sherpa-onnx-2.0.1.aar
+          ls -lh app/libs/
+
       - name: Clean environment and Build APK
         run: |
           rm -f local.properties
