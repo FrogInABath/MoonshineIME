@@ -34,6 +34,7 @@ jobs:
       - name: Clean environment and Build APK
         run: |
           rm -f local.properties
+          rm -f app/src/main/java/com/whispertflite/engine/WhisperEngineJava.java
           gradle assembleDebug --stacktrace
 
       - name: Upload APK Artifact
