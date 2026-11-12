@@ -1,4 +1,3 @@
-
 package com.whispertflite.engine
 
 import android.content.Context
@@ -6,24 +5,26 @@ import android.util.Log
 import com.k2fsa.sherpa.onnx.*
 import java.io.File
 
-class MoonshineEngine private constructor(private val context: Context) {
+class MoonshineEngine(private val context: Context) : WhisperEngine {
 
     private var recognizer: OfflineRecognizer? = null
-    private var isInitialized = false
+    private var initialized = false
 
     companion object {
         private const val TAG = "MoonshineEngine"
         @Volatile private var instance: MoonshineEngine? = null
 
+        @JvmStatic
         fun getInstance(context: Context): MoonshineEngine =
             instance ?: synchronized(this) {
                 instance ?: MoonshineEngine(context.applicationContext).also { instance = it }
             }
     }
 
-    @Synchronized
-    fun initialize(): Boolean {
-        if (isInitialized && recognizer != null) return true
+    override fun isInitialized(): Boolean = initialized && recognizer != null
+
+    override fun initialize(modelPath: String?, vocabPath: String?, multilingual: Boolean): Boolean {
+        if (isInitialized()) return true
 
         val modelDir = context.getExternalFilesDir(null) ?: context.filesDir
         val encoderFile = File(modelDir, "encoder_model.int8.onnx")
@@ -31,11 +32,11 @@ class MoonshineEngine private constructor(private val context: Context) {
         val tokensFile = File(modelDir, "tokens.txt")
 
         if (!encoderFile.exists() || !decoderFile.exists() || !tokensFile.exists()) {
-            Log.e(TAG, "Moonshine v2 model files missing from ${modelDir.absolutePath}")
+            Log.e(TAG, "Moonshine model files missing from ${modelDir.absolutePath}")
             return false
         }
 
-        try {
+        return try {
             val config = OfflineRecognizerConfig(
                 featConfig = FeatureConfig(sampleRate = 16000, featureDim = 80),
                 modelConfig = OfflineModelConfig(
@@ -53,19 +54,18 @@ class MoonshineEngine private constructor(private val context: Context) {
             )
 
             recognizer = OfflineRecognizer(config = config)
-            isInitialized = true
-            Log.i(TAG, "Moonshine v2 Engine initialized successfully.")
-            return true
+            initialized = true
+            Log.i(TAG, "Moonshine Engine initialized successfully.")
+            true
         } catch (e: Exception) {
             Log.e(TAG, "Failed to initialize OfflineRecognizer", e)
-            return false
+            false
         }
     }
 
-    @Synchronized
-    fun transcribe(samples: FloatArray): String {
-        if (!isInitialized || recognizer == null) {
-            if (!initialize()) return ""
+    override fun transcribeBuffer(samples: FloatArray): String {
+        if (!isInitialized()) {
+            if (!initialize(null, null, false)) return ""
         }
 
         return try {
@@ -73,12 +73,18 @@ class MoonshineEngine private constructor(private val context: Context) {
             val stream = rec.createStream()
             stream.acceptWaveform(samples, 16000)
             rec.decode(stream)
-            val result = rec.getResult(stream)?.text ?: ""
+            // Notice .text instead of ?.text to clear the Kotlin compiler warning
+            val result = rec.getResult(stream).text
             stream.release()
             result.trim()
         } catch (e: Exception) {
             Log.e(TAG, "Inference error during transcription", e)
             ""
         }
+    }
+
+    override fun transcribeFile(wavePath: String?): String {
+        // Fallback for file transcription if called by WhisperIME
+        return ""
     }
 }
