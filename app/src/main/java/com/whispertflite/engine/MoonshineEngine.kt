@@ -20,20 +20,28 @@ class MoonshineEngine(private val context: Context) : WhisperEngine {
 
     override fun isInitialized(): Boolean = initialized && recognizer != null
 
+    private fun resolveFile(dir: File, vararg candidates: String): File? {
+        for (name in candidates) {
+            val file = File(dir, name)
+            if (file.exists()) return file
+        }
+        return null
+    }
+
     @Throws(IOException::class)
     override fun initialize(modelPath: String?, vocabPath: String?, multilingual: Boolean) {
         if (isInitialized()) return
 
         val modelDir = context.getExternalFilesDir(null) ?: context.filesDir
-        val preprocessorFile = File(modelDir, "preprocess.onnx")
-        val encoderFile = File(modelDir, "encode.onnx")
-        val uncachedDecoderFile = File(modelDir, "uncached_decode.onnx")
-        val cachedDecoderFile = File(modelDir, "cached_decode.onnx")
-        val tokensFile = File(modelDir, "tokens.txt")
 
-        // Check required Sherpa-ONNX Moonshine files
-        if (!encoderFile.exists() || !uncachedDecoderFile.exists() || !tokensFile.exists()) {
-            Log.e(TAG, "Moonshine model files missing from ${modelDir.absolutePath}")
+        val preprocessor = resolveFile(modelDir, "preprocess.onnx")
+        val encoder = resolveFile(modelDir, "encode.int8.onnx", "encode.onnx", "encoder_model.int8.onnx")
+        val uncachedDecoder = resolveFile(modelDir, "uncached_decode.int8.onnx", "uncached_decode.onnx", "decoder_model_merged.int8.onnx")
+        val cachedDecoder = resolveFile(modelDir, "cached_decode.int8.onnx", "cached_decode.onnx") ?: uncachedDecoder
+        val tokens = resolveFile(modelDir, "tokens.txt")
+
+        if (preprocessor == null || encoder == null || uncachedDecoder == null || tokens == null) {
+            Log.e(TAG, "Moonshine ONNX assets missing from ${modelDir.absolutePath}. Found: preprocessor=$preprocessor, encoder=$encoder, decoder=$uncachedDecoder, tokens=$tokens")
             initialized = false
             return
         }
@@ -43,12 +51,12 @@ class MoonshineEngine(private val context: Context) : WhisperEngine {
                 featConfig = FeatureConfig(sampleRate = 16000, featureDim = 80),
                 modelConfig = OfflineModelConfig(
                     moonshine = OfflineMoonshineModelConfig(
-                        preprocessor = if (preprocessorFile.exists()) preprocessorFile.absolutePath else "",
-                        encoder = encoderFile.absolutePath,
-                        uncachedDecoder = uncachedDecoderFile.absolutePath,
-                        cachedDecoder = if (cachedDecoderFile.exists()) cachedDecoderFile.absolutePath else uncachedDecoderFile.absolutePath
+                        preprocessor = preprocessor.absolutePath,
+                        encoder = encoder.absolutePath,
+                        uncachedDecoder = uncachedDecoder.absolutePath,
+                        cachedDecoder = cachedDecoder.absolutePath
                     ),
-                    tokens = tokensFile.absolutePath,
+                    tokens = tokens.absolutePath,
                     numThreads = 2,
                     debug = false,
                     provider = "cpu"
@@ -57,9 +65,9 @@ class MoonshineEngine(private val context: Context) : WhisperEngine {
 
             recognizer = OfflineRecognizer(config = config)
             initialized = true
-            Log.i(TAG, "Moonshine Engine initialized successfully.")
+            Log.i(TAG, "Moonshine Engine initialized successfully from ${modelDir.absolutePath}")
         } catch (e: Exception) {
-            Log.e(TAG, "Failed to initialize OfflineRecognizer", e)
+            Log.e(TAG, "Failed to initialize Sherpa-ONNX Moonshine recognizer", e)
             initialized = false
         }
     }
@@ -91,7 +99,7 @@ class MoonshineEngine(private val context: Context) : WhisperEngine {
 
             WhisperResult(textResult, "en", mAction)
         } catch (e: Exception) {
-            Log.e(TAG, "Inference error during transcription", e)
+            Log.e(TAG, "Inference error during Moonshine transcription", e)
             WhisperResult("", "", mAction)
         }
     }
