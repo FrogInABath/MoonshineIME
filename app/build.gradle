@@ -70,8 +70,8 @@ dependencies {
     implementation 'com.github.houbb:opencc4j:1.14.0'
     implementation 'com.github.woheller69:FreeDroidWarn:+'
 
-    // TensorFlow Lite (needed by WhisperEngineJava.java)
-    implementation 'org.tensorflow:tensorflow-lite:2.15.0'
+    // Add these two lines to satisfy WhisperEngineJava.java
+    implementation 'org.tensorflow:tensorflow-lite:2.16.1'
     implementation 'org.tensorflow:tensorflow-lite-support:0.4.4'
 
     // Sherpa-ONNX local binary AAR
