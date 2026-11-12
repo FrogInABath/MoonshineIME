@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.whispertflite.engine.WhisperEngine;
-import com.whispertflite.engine.WhisperEngineJava;
+import com.whispertflite.engine.MoonshineEngine;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,7 +44,7 @@ public class Whisper {
     private volatile boolean taskAvailable = false;
 
     public Whisper(Context context) {
-        this.mWhisperEngine = new WhisperEngineJava(context);
+        this.mWhisperEngine = new MoonshineEngine(context);
 
         // Start thread for RecordBuffer transcription
         Thread threadProcessRecordBuffer = new Thread(this::processRecordBufferLoop);
