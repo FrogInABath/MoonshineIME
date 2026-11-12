@@ -37,14 +37,17 @@ class MoonshineEngine(private val context: Context) : WhisperEngine {
         val preprocessor = resolveFile(modelDir, "preprocess.onnx")
         val encoder = resolveFile(modelDir, "encode.int8.onnx", "encode.onnx", "encoder_model.int8.onnx")
         val uncachedDecoder = resolveFile(modelDir, "uncached_decode.int8.onnx", "uncached_decode.onnx", "decoder_model_merged.int8.onnx")
-        val cachedDecoder = resolveFile(modelDir, "cached_decode.int8.onnx", "cached_decode.onnx") ?: uncachedDecoder
         val tokens = resolveFile(modelDir, "tokens.txt")
 
+        // 1. Validate required components first
         if (preprocessor == null || encoder == null || uncachedDecoder == null || tokens == null) {
             Log.e(TAG, "Moonshine ONNX assets missing from ${modelDir.absolutePath}. Found: preprocessor=$preprocessor, encoder=$encoder, decoder=$uncachedDecoder, tokens=$tokens")
             initialized = false
             return
         }
+
+        // 2. uncachedDecoder is now smart-cast to non-null File, making cachedDecoder non-null File
+        val cachedDecoder = resolveFile(modelDir, "cached_decode.int8.onnx", "cached_decode.onnx") ?: uncachedDecoder
 
         try {
             val config = OfflineRecognizerConfig(
