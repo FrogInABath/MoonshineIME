@@ -4,57 +4,61 @@
     android:viewportWidth="320"
     android:viewportHeight="14">
 
-    <!-- Deep Background Strip Behind Branch -->
+    <!-- Under-Branch Shaded Canvas Gap -->
     <path
-        android:fillColor="#0E130E"
+        android:fillColor="#8C734D"
         android:pathData="M0,0 h320 v14 h-320 z" />
 
-    <!-- Vine Spiral (Under-Pass Segments Behind Branch) -->
+    <!-- Backside Creeping Vine Loops -->
     <path
-        android:strokeColor="#1E5222"
+        android:strokeColor="#1E381C"
         android:strokeWidth="2.5"
-        android:pathData="M18,11 Q28,14 38,4 M58,11 Q68,14 78,4 M98,11 Q108,14 118,4 M138,11 Q148,14 158,4 M178,11 Q188,14 198,4 M218,11 Q228,14 238,4 M258,11 Q268,14 278,4 M298,11 Q308,14 318,4" />
+        android:pathData="M16,11 Q26,15 36,3 M56,11 Q66,15 76,3 M96,11 Q106,15 116,3 M136,11 Q146,15 156,3 M176,11 Q186,15 196,3 M216,11 Q226,15 236,3 M256,11 Q266,15 276,3 M296,11 Q306,15 316,3" />
 
-    <!-- Main Solid Oak Branch Core -->
+    <!-- Ancient Gnarled Oak Branch (Irregular Fissured Contour) -->
+    <path
+        android:fillColor="#241408"
+        android:pathData="M0,5 Q20,2 45,6 Q65,8 90,4 Q120,2 145,6 Q175,8 200,4 Q230,2 260,6 Q290,7 320,4 L320,11 Q295,13 265,9 Q235,8 205,12 Q175,13 145,9 Q115,8 85,12 Q55,13 25,9 Q10,8 0,11 Z" />
+
+    <!-- Textured Weathered Wood & Knot Knurls -->
     <path
         android:fillColor="#3D2412"
-        android:pathData="M0,5 Q40,3 80,6 Q120,8 160,5 Q200,3 240,6 Q280,7 320,5 L320,10 Q280,12 240,10 Q200,8 160,10 Q120,13 80,11 Q40,9 0,10 Z" />
+        android:pathData="M0,5 Q20,2 45,6 Q65,8 90,4 Q120,2 145,6 Q175,8 200,4 Q230,2 260,6 Q290,7 320,4 L320,8 Q290,9 260,7 Q230,5 200,6 Q175,9 145,7 Q120,4 90,6 Q65,9 45,7 Q20,4 0,7 Z" />
 
-    <!-- Branch Top Woody Bark Ridge -->
+    <!-- Bark Fissures & Grain Cracks -->
     <path
-        android:fillColor="#5D381B"
-        android:pathData="M0,5 Q40,3 80,6 Q120,8 160,5 Q200,3 240,6 Q280,7 320,5 L320,7 Q280,9 240,8 Q200,5 160,7 Q120,10 80,8 Q40,6 0,7 Z" />
-
-    <!-- Branch Bottom Shadow Trim -->
-    <path
-        android:fillColor="#211207"
-        android:pathData="M0,9 Q40,8 80,10 Q120,12 160,9 Q200,7 240,9 Q280,11 320,9 L320,10 Q280,12 240,10 Q200,8 160,10 Q120,13 80,11 Q40,9 0,10 Z" />
-
-    <!-- Vine Spiral (Over-Pass Helical Loops Crossing Over the Branch) -->
-    <path
-        android:strokeColor="#43A047"
-        android:strokeWidth="2.8"
-        android:pathData="M-2,5 Q8,-1 18,11 M38,4 Q48,-1 58,11 M78,4 Q88,-1 98,11 M118,4 Q128,-1 138,11 M158,4 Q168,-1 178,11 M198,4 Q208,-1 218,11 M238,4 Q248,-1 258,11 M278,4 Q288,-1 298,11" />
-
-    <!-- Vine Highlight Spine -->
-    <path
-        android:strokeColor="#A5D6A7"
+        android:strokeColor="#120903"
         android:strokeWidth="1.0"
-        android:pathData="M-1,5 Q8,0 17,10 M39,4 Q48,0 57,10 M79,4 Q88,0 97,10 M119,4 Q128,0 137,10 M159,4 Q168,0 177,10 M199,4 Q208,0 217,10 M239,4 Q248,0 257,10 M279,4 Q288,0 297,10" />
+        android:pathData="M15,6 L35,8 M60,6 L80,5 M105,7 L130,6 M160,8 L185,6 M215,6 L240,7 M270,7 L295,6 M40,8 Q45,11 50,8 M170,8 Q175,11 180,8" />
 
-    <!-- Spiraling Leaves Sprouting Along the Loops -->
-    <!-- Top-side Leaf Clusters -->
+    <!-- Over-Branch Thorny Briar Vine Loops -->
     <path
-        android:fillColor="#66BB6A"
-        android:pathData="M7,1 Q12,-1 15,2 Q10,3 7,1 Z M47,1 Q52,-1 55,2 Q50,3 47,1 Z M87,1 Q92,-1 95,2 Q90,3 87,1 Z M127,1 Q132,-1 135,2 Q130,3 127,1 Z M167,1 Q172,-1 175,2 Q170,3 167,1 Z M207,1 Q212,-1 215,2 Q210,3 207,1 Z M247,1 Q252,-1 255,2 Q250,3 247,1 Z M287,1 Q292,-1 295,2 Q290,3 287,1 Z" />
+        android:strokeColor="#325A2A"
+        android:strokeWidth="2.8"
+        android:pathData="M-4,5 Q6,-2 16,11 M36,3 Q46,-2 56,11 M76,3 Q86,-2 96,11 M116,3 Q126,-2 136,11 M156,3 Q166,-2 176,11 M196,3 Q206,-2 216,11 M236,3 Q246,-2 256,11 M276,3 Q286,-2 296,11" />
+    <path
+        android:strokeColor="#5B8A49"
+        android:strokeWidth="1.2"
+        android:pathData="M-3,5 Q6,-1 15,10 M37,3 Q46,-1 55,10 M77,3 Q86,-1 95,10 M117,3 Q126,-1 135,10 M157,3 Q166,-1 175,10 M197,3 Q206,-1 215,10 M237,3 Q246,-1 255,10 M277,3 Q286,-1 295,10" />
 
-    <!-- Bottom-side Leaf Clusters -->
+    <!-- Clinging Ancient Moss & Lichen Patches -->
     <path
-        android:fillColor="#2E7D32"
-        android:pathData="M19,10 Q24,14 27,11 Q23,9 19,10 Z M59,10 Q64,14 67,11 Q63,9 59,10 Z M99,10 Q104,14 107,11 Q103,9 99,10 Z M139,10 Q144,14 147,11 Q143,9 139,10 Z M179,10 Q184,14 187,11 Q183,9 179,10 Z M219,10 Q224,14 227,11 Q223,9 219,10 Z M259,10 Q264,14 267,11 Q263,9 259,10 Z M299,10 Q304,14 307,11 Q303,9 299,10 Z" />
+        android:fillColor="#4D6B35"
+        android:pathData="M24,7 Q30,4 34,7 Q38,10 32,10 Q26,11 24,7 Z M102,7 Q108,4 112,7 Q116,10 110,10 Q104,11 102,7 Z M182,7 Q188,4 192,7 Q196,10 190,10 Q184,11 182,7 Z M262,7 Q268,4 272,7 Q276,10 270,10 Q264,11 262,7 Z" />
+    <path
+        android:fillColor="#769C50"
+        android:pathData="M26,7 Q30,5 32,7 Q30,9 26,7 Z M104,7 Q108,5 110,7 Q108,9 104,7 Z M184,7 Q188,5 190,7 Q188,9 184,7 Z M264,7 Q268,5 270,7 Q268,9 264,7 Z" />
 
-    <!-- Bottom Boundary Trim Line Separating Header from Acorn Deck -->
+    <!-- Wild Oak & Vine Sprouted Leaves -->
     <path
-        android:fillColor="#080C08"
+        android:fillColor="#487836"
+        android:pathData="M5,1 Q11,-2 14,2 Q8,4 5,1 Z M45,1 Q51,-2 54,2 Q48,4 45,1 Z M85,1 Q91,-2 94,2 Q88,4 85,1 Z M125,1 Q131,-2 134,2 Q128,4 125,1 Z M165,1 Q171,-2 174,2 Q168,4 165,1 Z M205,1 Q211,-2 214,2 Q208,4 205,1 Z M245,1 Q251,-2 254,2 Q248,4 245,1 Z M285,1 Q291,-2 294,2 Q288,4 285,1 Z" />
+    <path
+        android:fillColor="#28481E"
+        android:pathData="M18,9 Q24,13 27,10 Q22,8 18,9 Z M58,9 Q64,13 67,10 Q62,8 58,9 Z M98,9 Q104,13 107,10 Q102,8 98,9 Z M138,9 Q144,13 147,10 Q142,8 138,9 Z M178,9 Q184,13 187,10 Q182,8 178,9 Z M218,9 Q224,13 227,10 Q222,8 218,9 Z M258,9 Q264,13 267,10 Q262,8 258,9 Z M298,9 Q304,13 307,10 Q302,8 298,9 Z" />
+
+    <!-- Bottom Frayed Boundary Line -->
+    <path
+        android:fillColor="#543C1D"
         android:pathData="M0,13 h320 v1 h-320 z" />
 </vector>
