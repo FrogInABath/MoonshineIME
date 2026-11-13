@@ -7,7 +7,7 @@
     android:clipToPadding="false"
     android:padding="0dp">
 
-    <!-- Slim 3dp Progress Bar across the top edge -->
+    <!-- Slim Progress Bar -->
     <ProgressBar
         android:id="@+id/processing_bar"
         style="?android:attr/progressBarStyleHorizontal"
@@ -20,19 +20,19 @@
         android:progressBackgroundTint="#1E3320"
         android:indeterminateTint="#A9E04B" />
 
-    <!-- 48dp 8-Bit Forest Toolbar -->
+    <!-- 52dp Acorn Deck Toolbar -->
     <LinearLayout
         android:id="@+id/layout_buttons"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="52dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingStart="4dp"
         android:paddingEnd="4dp"
-        android:paddingTop="3dp"
+        android:paddingTop="4dp"
         android:paddingBottom="4dp">
 
-        <!-- Keyboard Switch -->
+        <!-- Keyboard Switch Acorn -->
         <TextView
             android:id="@+id/btnKeyboard"
             android:layout_width="0dp"
@@ -41,13 +41,14 @@
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
             android:gravity="center"
+            android:paddingTop="7dp"
             android:text="⌨"
-            android:textColor="#E8D5B7"
-            android:textSize="17sp"
-            android:background="@drawable/pixel_keycap_bg"
+            android:textColor="#FFFDF0"
+            android:textSize="15sp"
+            android:background="@drawable/acorn_keycap"
             android:contentDescription="@string/exit_button" />
 
-        <!-- Comma -->
+        <!-- Comma Acorn -->
         <TextView
             android:id="@+id/btnPunctComma"
             android:layout_width="0dp"
@@ -56,13 +57,14 @@
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
             android:gravity="center"
+            android:paddingTop="5dp"
             android:text=","
-            android:textColor="#FFF4E0"
-            android:textSize="20sp"
+            android:textColor="#FFFDF0"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:background="@drawable/pixel_keycap_bg" />
+            android:background="@drawable/acorn_keycap" />
 
-        <!-- Period -->
+        <!-- Period Acorn -->
         <TextView
             android:id="@+id/btnPunctPeriod"
             android:layout_width="0dp"
@@ -71,13 +73,14 @@
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
             android:gravity="center"
+            android:paddingTop="5dp"
             android:text="."
-            android:textColor="#FFF4E0"
-            android:textSize="20sp"
+            android:textColor="#FFFDF0"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:background="@drawable/pixel_keycap_bg" />
+            android:background="@drawable/acorn_keycap" />
 
-        <!-- Question Mark -->
+        <!-- Question Mark Acorn -->
         <TextView
             android:id="@+id/btnPunctQuestion"
             android:layout_width="0dp"
@@ -86,13 +89,14 @@
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
             android:gravity="center"
+            android:paddingTop="7dp"
             android:text="?"
-            android:textColor="#FFF4E0"
+            android:textColor="#FFFDF0"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:background="@drawable/pixel_keycap_bg" />
+            android:background="@drawable/acorn_keycap" />
 
-        <!-- Exclamation Mark -->
+        <!-- Exclamation Mark Acorn -->
         <TextView
             android:id="@+id/btnPunctExclamation"
             android:layout_width="0dp"
@@ -101,13 +105,14 @@
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
             android:gravity="center"
+            android:paddingTop="7dp"
             android:text="!"
-            android:textColor="#FFF4E0"
+            android:textColor="#FFFDF0"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:background="@drawable/pixel_keycap_bg" />
+            android:background="@drawable/acorn_keycap" />
 
-        <!-- Apostrophe -->
+        <!-- Apostrophe Acorn -->
         <TextView
             android:id="@+id/btnPunctApostrophe"
             android:layout_width="0dp"
@@ -116,24 +121,26 @@
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
             android:gravity="center"
+            android:paddingTop="7dp"
             android:text="'"
-            android:textColor="#FFF4E0"
-            android:textSize="19sp"
+            android:textColor="#FFFDF0"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:background="@drawable/pixel_keycap_bg" />
+            android:background="@drawable/acorn_keycap" />
 
-        <!-- Enlarged Oak Leaf Microphone Button -->
+        <!-- Oak Leaf Acorn Mic Button -->
         <ImageButton
             android:id="@+id/btnRecord"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1.8"
-            android:layout_marginStart="4dp"
+            android:layout_weight="1.6"
+            android:layout_marginStart="3dp"
             android:layout_marginEnd="2dp"
             android:scaleType="centerInside"
-            android:padding="6dp"
+            android:paddingTop="9dp"
+            android:paddingBottom="4dp"
             android:src="@drawable/ic_oak_leaf"
-            android:background="@drawable/pixel_keycap_bg"
+            android:background="@drawable/acorn_keycap"
             android:contentDescription="@string/record_button" />
 
     </LinearLayout>
