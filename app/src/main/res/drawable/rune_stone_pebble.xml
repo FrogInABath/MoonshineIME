@@ -4,34 +4,60 @@
     android:viewportWidth="100"
     android:viewportHeight="120">
 
-    <!-- Dark Chiseled Outer Edge -->
+    <!-- Canvas Drop Shadow -->
     <path
-        android:fillColor="#181B20"
+        android:fillColor="#382E1E"
+        android:pathData="M48,9 C77,9 95,27 95,57 C95,89 80,117 48,117 C18,117 6,90 6,58 C6,24 20,9 48,9 Z" />
+
+    <!-- Weathered Outer Rock Rim -->
+    <path
+        android:fillColor="#14171C"
         android:pathData="M48,6 C75,6 92,24 92,54 C92,86 78,114 48,114 C20,114 8,88 8,56 C8,22 22,6 48,6 Z" />
 
-    <!-- Highlighted Granite Edge -->
+    <!-- Sunlit Stone Glint -->
     <path
-        android:fillColor="#707A88"
-        android:pathData="M48,6 C73,6 89,23 90,51 C88,51 86,26 48,9 C24,9 12,25 11,54 C9,54 8,24 48,6 Z" />
+        android:fillColor="#6A7482"
+        android:pathData="M48,6 C72,6 88,23 90,50 C88,50 85,25 48,9 C24,9 12,25 11,53 C9,53 8,24 48,6 Z" />
 
-    <!-- Stone Body -->
+    <!-- Main Weathered Body -->
     <path
-        android:fillColor="#343B44"
+        android:fillColor="#2E343D"
         android:pathData="M48,9 C72,9 89,25 89,53 C89,83 75,111 48,111 C22,111 11,85 11,54 C11,24 23,9 48,9 Z" />
 
-    <!-- Weathered Cleavage Facets -->
+    <!-- Flank Fracture Crack -->
     <path
-        android:fillColor="#414954"
+        android:strokeColor="#101216"
+        android:strokeWidth="1.8"
+        android:pathData="M89,53 L74,62 L66,58 L54,76 L48,84" />
+    <path
+        android:strokeColor="#56606E"
+        android:strokeWidth="0.8"
+        android:pathData="M89,54 L74,63 L66,59 L54,77 L48,85" />
+
+    <!-- Weathered Facets -->
+    <path
+        android:fillColor="#3A424D"
         android:pathData="M48,9 C65,9 80,18 85,32 L50,54 Z M11,54 C11,35 20,18 35,11 L48,50 Z" />
     <path
-        android:fillColor="#262B32"
+        android:fillColor="#21252C"
         android:pathData="M89,53 C89,75 78,102 52,110 L50,68 Z M11,54 C11,75 22,102 46,110 L48,68 Z" />
 
-    <!-- Sunken Chiseled Rune Well -->
+    <!-- Deep Incised Chiseled Bed -->
     <path
-        android:fillColor="#111317"
-        android:pathData="M48,22 C67,22 76,36 76,56 C76,78 66,96 48,96 C30,96 22,78 22,56 C22,36 30,22 48,22 Z" />
+        android:fillColor="#0A0C0F"
+        android:pathData="M48,22 C67,22 77,36 77,56 C77,79 67,97 48,97 C29,97 21,79 21,56 C21,36 29,22 48,22 Z" />
     <path
-        android:fillColor="#181C22"
+        android:fillColor="#171A20"
         android:pathData="M48,25 C64,25 73,38 73,56 C73,75 63,93 48,93 C32,93 25,75 25,56 C25,38 33,25 48,25 Z" />
+    <path
+        android:fillColor="#3B434F"
+        android:pathData="M23,72 C30,88 40,95 48,95 C56,95 66,88 73,72 C71,76 62,92 48,92 C34,92 25,76 23,72 Z" />
+
+    <!-- Creeping Velvet Moss on Right and Base -->
+    <path
+        android:fillColor="#2E4A23"
+        android:pathData="M78,64 Q88,72 86,84 Q82,96 72,92 Q70,82 78,64 Z M42,104 Q50,102 56,108 Q48,114 40,111 Q38,105 42,104 Z" />
+    <path
+        android:fillColor="#52783D"
+        android:pathData="M80,68 Q85,74 84,82 Q80,90 74,88 Q73,80 80,68 Z M44,104 Q48,103 52,107 Q48,110 42,109 Q41,105 44,104 Z" />
 </vector>
