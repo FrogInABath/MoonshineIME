@@ -4,34 +4,59 @@
     android:viewportWidth="100"
     android:viewportHeight="120">
 
-    <!-- Dark Chiseled Keystone Outer Border -->
+    <!-- Canvas Shadow -->
     <path
-        android:fillColor="#181B20"
+        android:fillColor="#382E1E"
+        android:pathData="M24,9 L78,9 L90,115 L10,115 Z" />
+
+    <!-- Weathered Pillar Silhouette -->
+    <path
+        android:fillColor="#15181C"
         android:pathData="M24,6 L76,6 L88,112 L12,112 Z" />
 
-    <!-- Top & Left Light Catch Lines -->
+    <!-- Weathered Light Edge -->
     <path
-        android:fillColor="#75808F"
+        android:fillColor="#687382"
         android:pathData="M24,6 L76,6 L75,9 L26,9 L15,110 L12,112 Z" />
 
-    <!-- Slate Monolith Center Body -->
+    <!-- Main Slate Keystone Face -->
     <path
-        android:fillColor="#343A43"
+        android:fillColor="#2C323A"
         android:pathData="M26,9 L74,9 L85,109 L15,109 Z" />
 
-    <!-- Vertical Chisel Fluting -->
+    <!-- Vertical Weathering Fissures -->
     <path
-        android:fillColor="#444C57"
+        android:strokeColor="#0F1115"
+        android:strokeWidth="1.8"
+        android:pathData="M38,9 L36,38 L42,62 L38,90 M68,30 L72,58 L68,88" />
+    <path
+        android:strokeColor="#525C6B"
+        android:strokeWidth="0.8"
+        android:pathData="M39,9 L37,39 L43,63 L39,91 M69,30 L73,59 L69,89" />
+
+    <path
+        android:fillColor="#38404A"
         android:pathData="M26,9 L50,9 L47,109 L15,109 Z" />
     <path
-        android:fillColor="#252A31"
+        android:fillColor="#20242B"
         android:pathData="M50,9 L74,9 L85,109 L47,109 Z" />
 
-    <!-- Sunken Vertical Chisel Trench for the Exclamation Glyph -->
+    <!-- Deep Incised Keystone Trench -->
     <path
-        android:fillColor="#111317"
-        android:pathData="M32,22 L68,22 L76,98 L24,98 Z" />
+        android:fillColor="#0A0C0E"
+        android:pathData="M31,21 L69,21 L77,99 L23,99 Z" />
     <path
-        android:fillColor="#191D23"
-        android:pathData="M34,25 L66,25 L73,95 L27,95 Z" />
+        android:fillColor="#16191E"
+        android:pathData="M34,24 L66,24 L73,96 L27,96 Z" />
+    <path
+        android:fillColor="#3A424E"
+        android:pathData="M23,99 L77,99 L73,96 L27,96 Z" />
+
+    <!-- Lichen Crawling Up Base & Keystone Corners -->
+    <path
+        android:fillColor="#2E4A23"
+        android:pathData="M12,98 Q22,86 32,96 Q24,110 14,108 Z M68,6 Q78,4 82,14 Q74,18 68,6 Z" />
+    <path
+        android:fillColor="#52783D"
+        android:pathData="M14,99 Q21,90 28,97 Q22,106 16,105 Z M70,7 Q76,5 79,12 Q74,15 70,7 Z" />
 </vector>
