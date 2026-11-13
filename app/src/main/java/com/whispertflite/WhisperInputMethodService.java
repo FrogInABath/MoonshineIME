@@ -57,6 +57,10 @@ public class WhisperInputMethodService extends InputMethodService {
     private boolean modeAuto = false;
     private RelativeLayout layoutButtons;
 
+    // Push-to-Talk tracking
+    private long recordStartTime = 0;
+    private boolean isDiscarded = false;
+
     @Override
     public void onCreate() {
         mContext = this;
@@ -85,38 +89,62 @@ public class WhisperInputMethodService extends InputMethodService {
     @Override
     public void onStartInputView(EditorInfo attribute, boolean restarting) {
         super.onStartInputView(attribute, restarting);
-        // MoonshineEngine resolves ONNX assets directly from getExternalFilesDir(null)
         if (mWhisper == null) {
             initModel();
         }
     }
 
-    // --- Physical Hardware Key Interception (CAT S22 Flip Center D-Pad) ---
+    // --- Validation: Ensure an actual editable input box is active ---
+
+    private boolean isInputTargetValid() {
+        if (!isInputViewShown()) return false;
+        InputConnection ic = getCurrentInputConnection();
+        if (ic == null) return false;
+        EditorInfo ei = getCurrentInputEditorInfo();
+        if (ei == null) return false;
+        // Verify target is an editable field (not TYPE_NULL)
+        return (ei.inputType & EditorInfo.TYPE_MASK_CLASS) != EditorInfo.TYPE_NULL;
+    }
+
+    // --- Physical Hardware Key Interception (CAT S22 Orange Action/PTT Button) ---
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER) {
-            // event.getRepeatCount() == 0 ensures recording only starts on the initial press, not long-press repeats
-            if (event.getRepeatCount() == 0) {
-                if (checkRecordPermission()) {
-                    if (mWhisper != null && !mWhisper.isInProgress() && mRecorder != null && !mRecorder.isInProgress()) {
-                        HapticFeedback.vibrate(this);
-                        startRecordingAction();
+        // CAT S22 Orange PTT Key = Keycode 269 (KeyEvent.KEYCODE_PTT)
+        if (keyCode == KeyEvent.KEYCODE_PTT || keyCode == 269) {
+            if (isInputTargetValid()) {
+                // event.getRepeatCount() == 0 ensures recording triggers on initial press, not held repeat pulses
+                if (event.getRepeatCount() == 0) {
+                    if (checkRecordPermission()) {
+                        if (mWhisper != null && !mWhisper.isInProgress() && mRecorder != null && !mRecorder.isInProgress()) {
+                            isDiscarded = false;
+                            recordStartTime = System.currentTimeMillis();
+                            HapticFeedback.vibrate(this);
+                            startRecordingAction();
+                        }
                     }
                 }
+                return true; // Consume event
             }
-            return true; // Consume event so the underlying host app doesn't receive enter/click
         }
         return super.onKeyDown(keyCode, event);
     }
 
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER) {
+        if (keyCode == KeyEvent.KEYCODE_PTT || keyCode == 269) {
             if (mRecorder != null && mRecorder.isInProgress()) {
-                stopRecordingAction();
+                long holdDuration = System.currentTimeMillis() - recordStartTime;
+                // If held for less than 300ms, treat as accidental tap and discard
+                if (holdDuration < 300) {
+                    isDiscarded = true;
+                    stopRecordingAction();
+                } else {
+                    isDiscarded = false;
+                    stopRecordingAction();
+                }
+                return true;
             }
-            return true; // Consume key release
         }
         return super.onKeyUp(keyCode, event);
     }
@@ -177,7 +205,6 @@ public class WhisperInputMethodService extends InputMethodService {
         });
         if (mRecorder != null && mRecorder.isInProgress()) {
             mRecorder.stop();
-            // RecorderListener triggers startTranscription() on MSG_RECORDING_DONE
         }
     }
 
@@ -231,7 +258,13 @@ public class WhisperInputMethodService extends InputMethodService {
                             btnRecord.setBackgroundResource(R.drawable.rounded_button_background);
                         }
                     });
-                    startTranscription();
+                    if (!isDiscarded) {
+                        startTranscription();
+                    } else {
+                        handler.post(() -> {
+                            if (processingBar != null) processingBar.setProgress(0);
+                        });
+                    }
                 } else if (message.equals(Recorder.MSG_RECORDING_ERROR)) {
                     HapticFeedback.vibrate(mContext);
                     if (countDownTimer != null) countDownTimer.cancel();
@@ -255,6 +288,8 @@ public class WhisperInputMethodService extends InputMethodService {
         btnRecord.setOnTouchListener((v, event) -> {
             if (event.getAction() == MotionEvent.ACTION_DOWN) {
                 if (checkRecordPermission()) {
+                    isDiscarded = false;
+                    recordStartTime = System.currentTimeMillis();
                     HapticFeedback.vibrate(this);
                     startRecordingAction();
                 }
