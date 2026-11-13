@@ -1,0 +1,37 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="38dp"
+    android:height="48dp"
+    android:viewportWidth="100"
+    android:viewportHeight="120">
+
+    <!-- Chiseled Martial Shield Silhouette -->
+    <path
+        android:fillColor="#181B20"
+        android:pathData="M20,6 L80,6 L90,62 L50,114 L10,62 Z" />
+
+    <!-- Sunlit Crest & Left Facet Edge -->
+    <path
+        android:fillColor="#727D8C"
+        android:pathData="M20,6 L80,6 L78,9 L22,9 L13,62 L50,111 L50,114 L10,62 Z" />
+
+    <!-- Shield Face Body -->
+    <path
+        android:fillColor="#333942"
+        android:pathData="M22,9 L78,9 L87,62 L50,111 L13,62 Z" />
+
+    <!-- Chiseled Chevron Split Facet -->
+    <path
+        android:fillColor="#424A55"
+        android:pathData="M22,9 L50,9 L50,111 L13,62 Z" />
+    <path
+        android:fillColor="#23272E"
+        android:pathData="M50,9 L78,9 L87,62 L50,111 Z" />
+
+    <!-- Sunken Shield Hearth for the Glyph -->
+    <path
+        android:fillColor="#111317"
+        android:pathData="M30,22 L70,22 L78,60 L50,96 L22,60 Z" />
+    <path
+        android:fillColor="#181B21"
+        android:pathData="M32,25 L68,25 L75,59 L50,93 L25,59 Z" />
+</vector>
