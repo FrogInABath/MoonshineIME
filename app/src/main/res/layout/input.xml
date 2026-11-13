@@ -47,7 +47,7 @@
             android:contentDescription="@string/exit_button" />
 
         <!-- Acorn Comma -->
-        <org.woheller69.whisper.AcornButton
+        <com.whispertflite.AcornButton
             android:id="@+id/btnPunctComma"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -66,7 +66,7 @@
             android:contentDescription="Comma" />
 
         <!-- Acorn Period -->
-        <org.woheller69.whisper.AcornButton
+        <com.whispertflite.AcornButton
             android:id="@+id/btnPunctPeriod"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -85,7 +85,7 @@
             android:contentDescription="Period" />
 
         <!-- Acorn Question Mark -->
-        <org.woheller69.whisper.AcornButton
+        <com.whispertflite.AcornButton
             android:id="@+id/btnPunctQuestion"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -104,7 +104,7 @@
             android:contentDescription="Question Mark" />
 
         <!-- Acorn Exclamation Point -->
-        <org.woheller69.whisper.AcornButton
+        <com.whispertflite.AcornButton
             android:id="@+id/btnPunctExclamation"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -123,7 +123,7 @@
             android:contentDescription="Exclamation Point" />
 
         <!-- Acorn Apostrophe -->
-        <org.woheller69.whisper.AcornButton
+        <com.whispertflite.AcornButton
             android:id="@+id/btnPunctApostrophe"
             android:layout_width="0dp"
             android:layout_height="match_parent"
