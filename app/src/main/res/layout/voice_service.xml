@@ -1,105 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@color/darkGrey"
     android:clipToPadding="false"
-    android:padding="5dp">
+    android:padding="0dp">
 
+    <!-- Slim 3dp Progress Bar pinned across the top edge -->
     <ProgressBar
         android:id="@+id/processing_bar"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="3dp"
         android:indeterminate="false"
+        android:max="100"
+        android:progress="0"
         android:progressTint="@color/colorAccent"
         android:progressBackgroundTint="@color/lightGrey"
-        android:indeterminateTint="@color/colorAccent"
-        style="?android:attr/progressBarStyleHorizontal"/>
+        android:indeterminateTint="@color/colorAccent" />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginBottom="5dp">
+    <!-- Compact 44dp Toolbar replacing the large multi-row mic layout -->
+    <LinearLayout
+        android:id="@+id/layout_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
 
-        <ImageButton
-            android:id="@+id/btnModeAuto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:background="@color/darkGrey"
-            android:src="@drawable/ic_auto_off_36dp"
-            android:contentDescription="@string/auto_button"/>
-
-        <ImageButton
+        <!-- Switch back to standard/T9 keyboard[cite: 17] -->
+        <TextView
             android:id="@+id/btnKeyboard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:background="@color/darkGrey"
-            android:src="@drawable/ic_keyboard_36dp"
-            android:contentDescription="@string/exit_button"/>
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1"
+            android:gravity="center"
+            android:text="⌨"
+            android:textColor="#B0BEC5"
+            android:textSize="18sp"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/exit_button" />
 
-        <ImageButton
-            android:id="@+id/btnTranslate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:background="@color/darkGrey"
-            android:src="@drawable/ic_english_off_36dp"
-            android:contentDescription="@string/translate"/>
+        <!-- Comma -->
+        <TextView
+            android:id="@+id/btnPunctComma"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text=","
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="?android:attr/selectableItemBackground" />
 
-    </RelativeLayout>
+        <!-- Period -->
+        <TextView
+            android:id="@+id/btnPunctPeriod"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="."
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <!-- Question Mark -->
+        <TextView
+            android:id="@+id/btnPunctQuestion"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="?"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <!-- Exclamation Point -->
+        <TextView
+            android:id="@+id/btnPunctExclamation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="!"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <!-- Apostrophe -->
+        <TextView
+            android:id="@+id/btnPunctApostrophe"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9"
+            android:gravity="center"
+            android:text="'"
+            android:textColor="#FFFFFF"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <!-- Backspace with Repeat Hold[cite: 17] -->
+        <TextView
+            android:id="@+id/btnDel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:text="⌫"
+            android:textColor="#FF8A80"
+            android:textSize="18sp"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/delete_button" />
+
+        <!-- Enter / Return[cite: 17] -->
+        <TextView
+            android:id="@+id/btnEnter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1"
+            android:gravity="center"
+            android:text="↵"
+            android:textColor="#80D8FF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/return_button" />
+
+        <!-- Compact Recording Indicator & Touch Fallback[cite: 17] -->
+        <TextView
+            android:id="@+id/btnRecord"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="🎙"
+            android:textColor="#78909C"
+            android:textSize="16sp"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/record_button" />
+
+    </LinearLayout>
+
+    <!-- Invisible placeholder retained to prevent NullPointerExceptions in legacy methods[cite: 17] -->
     <TextView
         android:id="@+id/tv_status"
-        android:visibility="gone"
-        android:gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="10dp"
-        android:textSize="20dp"
-        android:textColor="@android:color/holo_red_dark" />
-    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/layout_buttons"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginBottom="10dp">
-
-        <ImageButton
-            android:id="@+id/btnRecord"
-            android:layout_width="96dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginVertical="3dp"
-            android:layout_marginHorizontal="5dp"
-            android:background="@drawable/rounded_button_background"
-            android:src="@drawable/ic_mic_48dp"
-            android:contentDescription="@string/record_button"/>
-
-        <ImageButton
-            android:id="@+id/btnDel"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="3dp"
-            android:layout_marginHorizontal="3dp"
-            android:layout_toStartOf="@id/btnEnter"
-            android:background="@drawable/rounded_button_background"
-            android:src="@drawable/ic_keyboard_del_48dp"
-            android:contentDescription="@string/delete_button"/>
-
-        <ImageButton
-            android:id="@+id/btnEnter"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="3dp"
-            android:layout_marginHorizontal="3dp"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/rounded_button_background"
-            android:src="@drawable/ic_keyboard_return_48dp"
-            android:contentDescription="@string/return_button"/>
-
-    </RelativeLayout>
+        android:layout_height="0dp"
+        android:visibility="gone" />
 
 </LinearLayout>
