@@ -75,6 +75,19 @@ public class WhisperInputMethodService extends InputMethodService {
         super.onDestroy();
     }
 
+    // --- Critical for CAT S22 Flip: Force Soft Keyboard with Physical Keypad Present ---
+
+    @Override
+    public boolean onEvaluateInputViewShown() {
+        super.onEvaluateInputViewShown();
+        return true; // Overrides Android default which hides soft IME when physical keypad is present
+    }
+
+    @Override
+    public boolean onShowInputRequested(int flags, boolean configChange) {
+        return true; // Always show when a text box requests input
+    }
+
     @Override
     public void onStartInput(EditorInfo attribute, boolean restarting) {
         if (attribute.inputType == EditorInfo.TYPE_NULL) {
@@ -146,7 +159,6 @@ public class WhisperInputMethodService extends InputMethodService {
 
     private void animateHorizontalSpin(View v) {
         if (v == null) return;
-        // Increase camera distance to avoid 3D clipping on small displays
         v.setCameraDistance(6000 * getResources().getDisplayMetrics().density);
         ObjectAnimator spin = ObjectAnimator.ofFloat(v, "rotationX", 0f, 360f);
         spin.setDuration(350);
@@ -161,7 +173,6 @@ public class WhisperInputMethodService extends InputMethodService {
 
         handler.post(() -> {
             if (btnRecord != null) {
-                // Glow fiery orange-red while recording
                 btnRecord.setColorFilter(Color.parseColor("#FF6D00"), PorterDuff.Mode.SRC_IN);
                 animateHorizontalSpin(btnRecord);
             }
@@ -190,7 +201,6 @@ public class WhisperInputMethodService extends InputMethodService {
     private void stopRecordingAction() {
         handler.post(() -> {
             if (btnRecord != null) {
-                // Clear color filter to restore natural green oak leaf
                 btnRecord.clearColorFilter();
             }
         });
@@ -206,7 +216,6 @@ public class WhisperInputMethodService extends InputMethodService {
         InputConnection ic = getCurrentInputConnection();
         if (ic == null) return;
 
-        // Strip Moonshine's trailing space before attaching punctuation
         CharSequence before = ic.getTextBeforeCursor(1, 0);
         if (before != null && before.length() > 0 && before.charAt(0) == ' ') {
             if (!punct.equals(" ")) {
@@ -247,14 +256,12 @@ public class WhisperInputMethodService extends InputMethodService {
         btnPunctExclamation = view.findViewById(R.id.btnPunctExclamation);
         btnPunctApostrophe = view.findViewById(R.id.btnPunctApostrophe);
 
-        // Punctuation click handlers with horizontal-axis spin
         if (btnPunctComma != null) btnPunctComma.setOnClickListener(v -> commitPunctuation(v, ","));
         if (btnPunctPeriod != null) btnPunctPeriod.setOnClickListener(v -> commitPunctuation(v, "."));
         if (btnPunctQuestion != null) btnPunctQuestion.setOnClickListener(v -> commitPunctuation(v, "?"));
         if (btnPunctExclamation != null) btnPunctExclamation.setOnClickListener(v -> commitPunctuation(v, "!"));
         if (btnPunctApostrophe != null) btnPunctApostrophe.setOnClickListener(v -> commitPunctuation(v, "'"));
 
-        // Keyboard switcher
         if (btnKeyboard != null) {
             btnKeyboard.setOnClickListener(v -> {
                 animateHorizontalSpin(v);
@@ -263,7 +270,6 @@ public class WhisperInputMethodService extends InputMethodService {
             });
         }
 
-        // Tap/hold fallback on the oak leaf button
         if (btnRecord != null) {
             btnRecord.setOnTouchListener((v, event) -> {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -280,7 +286,6 @@ public class WhisperInputMethodService extends InputMethodService {
             });
         }
 
-        // Recorder setup
         mRecorder = new Recorder(this);
         mRecorder.setListener(new Recorder.RecorderListener() {
             @Override
