@@ -31,6 +31,8 @@ import java.io.File;
 
 public class WhisperInputMethodService extends InputMethodService {
     private static final String TAG = "WhisperInputMethodService";
+    
+    // Physical CAT S22 Flip Orange Hardware PTT Keycode
     private static final int KEYCODE_PTT = 269;
 
     private TextView btnRecord;
@@ -100,7 +102,7 @@ public class WhisperInputMethodService extends InputMethodService {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_PTT || keyCode == 269) {
+        if (keyCode == KEYCODE_PTT) {
             if (isInputTargetValid() && event.getRepeatCount() == 0) {
                 if (checkRecordPermission()) {
                     if (mWhisper != null && !mWhisper.isInProgress() && mRecorder != null && !mRecorder.isInProgress()) {
@@ -118,7 +120,7 @@ public class WhisperInputMethodService extends InputMethodService {
 
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_PTT || keyCode == 269) {
+        if (keyCode == KEYCODE_PTT) {
             if (mRecorder != null && mRecorder.isInProgress()) {
                 long holdDuration = System.currentTimeMillis() - recordStartTime;
                 isDiscarded = (holdDuration < 300); // Discard accidental taps < 300ms
@@ -173,7 +175,7 @@ public class WhisperInputMethodService extends InputMethodService {
         InputConnection ic = getCurrentInputConnection();
         if (ic == null) return;
 
-        // Moonshine transcribes with a trailing space. Strip it before punctuation.
+        // Strip Moonshine's trailing space before attaching punctuation
         CharSequence before = ic.getTextBeforeCursor(1, 0);
         if (before != null && before.length() > 0 && before.charAt(0) == ' ') {
             if (!punct.equals(" ")) {
@@ -224,7 +226,7 @@ public class WhisperInputMethodService extends InputMethodService {
         if (btnPunctExclamation != null) btnPunctExclamation.setOnClickListener(v -> commitPunctuation("!"));
         if (btnPunctApostrophe != null) btnPunctApostrophe.setOnClickListener(v -> commitPunctuation("'"));
 
-        // Switch back to T9 / standard keyboard
+        // Switch back to standard/T9 keyboard
         if (btnKeyboard != null) {
             btnKeyboard.setOnClickListener(v -> {
                 if (mWhisper != null) stopTranscription();
