@@ -1,8 +1,11 @@
 package com.whispertflite;
 
+import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.inputmethodservice.InputMethodService;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -12,8 +15,10 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -31,14 +36,13 @@ import java.io.File;
 
 public class WhisperInputMethodService extends InputMethodService {
     private static final String TAG = "WhisperInputMethodService";
-    
-    // Physical CAT S22 Flip Orange Hardware PTT Keycode
-    private static final int KEYCODE_PTT = 269;
 
-    private TextView btnRecord;
+    // CAT S22 Orange Action key constants
+    private static final int KEYCODE_PTT = 269;
+    private static final int SCANCODE_CAT_ACTION = 35;
+
+    private ImageButton btnRecord;
     private TextView btnKeyboard;
-    private TextView btnEnter;
-    private TextView btnDel;
     private TextView btnPunctComma;
     private TextView btnPunctPeriod;
     private TextView btnPunctQuestion;
@@ -90,19 +94,24 @@ public class WhisperInputMethodService extends InputMethodService {
     }
 
     private boolean isInputTargetValid() {
-        if (!isInputViewShown()) return false;
-        InputConnection ic = getCurrentInputConnection();
-        if (ic == null) return false;
-        EditorInfo ei = getCurrentInputEditorInfo();
-        if (ei == null) return false;
-        return (ei.inputType & EditorInfo.TYPE_MASK_CLASS) != EditorInfo.TYPE_NULL;
+        return getCurrentInputConnection() != null;
     }
 
-    // --- Physical Hardware Key Interception (Orange PTT Side Key: Keycode 269) ---
+    private boolean isActionKey(int keyCode, KeyEvent event) {
+        if (keyCode == KEYCODE_PTT || keyCode == 269) return true;
+        if (event != null && (event.getScanCode() == SCANCODE_CAT_ACTION || event.getScanCode() == 0x23)) {
+            return true;
+        }
+        return false;
+    }
+
+    // --- Physical Hardware Key Interception (Orange PTT Side Key) ---
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KEYCODE_PTT) {
+        Log.d(TAG, "onKeyDown: keyCode=" + keyCode + ", scanCode=" + (event != null ? event.getScanCode() : 0));
+
+        if (isActionKey(keyCode, event)) {
             if (isInputTargetValid() && event.getRepeatCount() == 0) {
                 if (checkRecordPermission()) {
                     if (mWhisper != null && !mWhisper.isInProgress() && mRecorder != null && !mRecorder.isInProgress()) {
@@ -120,15 +129,29 @@ public class WhisperInputMethodService extends InputMethodService {
 
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        if (keyCode == KEYCODE_PTT) {
+        Log.d(TAG, "onKeyUp: keyCode=" + keyCode + ", scanCode=" + (event != null ? event.getScanCode() : 0));
+
+        if (isActionKey(keyCode, event)) {
             if (mRecorder != null && mRecorder.isInProgress()) {
                 long holdDuration = System.currentTimeMillis() - recordStartTime;
-                isDiscarded = (holdDuration < 300); // Discard accidental taps < 300ms
+                isDiscarded = (holdDuration < 150);
                 stopRecordingAction();
                 return true;
             }
         }
         return super.onKeyUp(keyCode, event);
+    }
+
+    // --- 3D Horizontal-Axis (rotationX) Spin Animation ---
+
+    private void animateHorizontalSpin(View v) {
+        if (v == null) return;
+        // Increase camera distance to avoid 3D clipping on small displays
+        v.setCameraDistance(6000 * getResources().getDisplayMetrics().density);
+        ObjectAnimator spin = ObjectAnimator.ofFloat(v, "rotationX", 0f, 360f);
+        spin.setDuration(350);
+        spin.setInterpolator(new AccelerateDecelerateInterpolator());
+        spin.start();
     }
 
     // --- Recording Actions & Visual Feedback ---
@@ -137,7 +160,11 @@ public class WhisperInputMethodService extends InputMethodService {
         if (mWhisper != null && mWhisper.isInProgress()) return;
 
         handler.post(() -> {
-            if (btnRecord != null) btnRecord.setTextColor(0xFFFF3D00); // Highlight red
+            if (btnRecord != null) {
+                // Glow fiery orange-red while recording
+                btnRecord.setColorFilter(Color.parseColor("#FF6D00"), PorterDuff.Mode.SRC_IN);
+                animateHorizontalSpin(btnRecord);
+            }
             if (processingBar != null) {
                 processingBar.setIndeterminate(false);
                 processingBar.setProgress(100);
@@ -162,7 +189,10 @@ public class WhisperInputMethodService extends InputMethodService {
 
     private void stopRecordingAction() {
         handler.post(() -> {
-            if (btnRecord != null) btnRecord.setTextColor(0xFF78909C); // Restore gray
+            if (btnRecord != null) {
+                // Clear color filter to restore natural green oak leaf
+                btnRecord.clearColorFilter();
+            }
         });
         if (mRecorder != null && mRecorder.isInProgress()) {
             mRecorder.stop();
@@ -171,7 +201,8 @@ public class WhisperInputMethodService extends InputMethodService {
 
     // --- Smart Punctuation Helper ---
 
-    private void commitPunctuation(String punct) {
+    private void commitPunctuation(View view, String punct) {
+        animateHorizontalSpin(view);
         InputConnection ic = getCurrentInputConnection();
         if (ic == null) return;
 
@@ -183,7 +214,6 @@ public class WhisperInputMethodService extends InputMethodService {
             }
         }
 
-        // Attach punctuation + auto-insert trailing space (except for apostrophes)
         if (punct.equals("'")) {
             ic.commitText("'", 1);
         } else {
@@ -191,7 +221,7 @@ public class WhisperInputMethodService extends InputMethodService {
         }
     }
 
-    // --- Layout Inflation & Click Bindings ---
+    // --- Layout Construction & Bindings ---
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -211,75 +241,29 @@ public class WhisperInputMethodService extends InputMethodService {
         tvStatus = view.findViewById(R.id.tv_status);
         btnRecord = view.findViewById(R.id.btnRecord);
         btnKeyboard = view.findViewById(R.id.btnKeyboard);
-        btnEnter = view.findViewById(R.id.btnEnter);
-        btnDel = view.findViewById(R.id.btnDel);
         btnPunctComma = view.findViewById(R.id.btnPunctComma);
         btnPunctPeriod = view.findViewById(R.id.btnPunctPeriod);
         btnPunctQuestion = view.findViewById(R.id.btnPunctQuestion);
         btnPunctExclamation = view.findViewById(R.id.btnPunctExclamation);
         btnPunctApostrophe = view.findViewById(R.id.btnPunctApostrophe);
 
-        // Punctuation click handlers
-        if (btnPunctComma != null) btnPunctComma.setOnClickListener(v -> commitPunctuation(","));
-        if (btnPunctPeriod != null) btnPunctPeriod.setOnClickListener(v -> commitPunctuation("."));
-        if (btnPunctQuestion != null) btnPunctQuestion.setOnClickListener(v -> commitPunctuation("?"));
-        if (btnPunctExclamation != null) btnPunctExclamation.setOnClickListener(v -> commitPunctuation("!"));
-        if (btnPunctApostrophe != null) btnPunctApostrophe.setOnClickListener(v -> commitPunctuation("'"));
+        // Punctuation click handlers with horizontal-axis spin
+        if (btnPunctComma != null) btnPunctComma.setOnClickListener(v -> commitPunctuation(v, ","));
+        if (btnPunctPeriod != null) btnPunctPeriod.setOnClickListener(v -> commitPunctuation(v, "."));
+        if (btnPunctQuestion != null) btnPunctQuestion.setOnClickListener(v -> commitPunctuation(v, "?"));
+        if (btnPunctExclamation != null) btnPunctExclamation.setOnClickListener(v -> commitPunctuation(v, "!"));
+        if (btnPunctApostrophe != null) btnPunctApostrophe.setOnClickListener(v -> commitPunctuation(v, "'"));
 
-        // Switch back to standard/T9 keyboard
+        // Keyboard switcher
         if (btnKeyboard != null) {
             btnKeyboard.setOnClickListener(v -> {
+                animateHorizontalSpin(v);
                 if (mWhisper != null) stopTranscription();
                 switchToPreviousInputMethod();
             });
         }
 
-        // Enter key
-        if (btnEnter != null) {
-            btnEnter.setOnClickListener(v -> {
-                InputConnection ic = getCurrentInputConnection();
-                if (ic != null) {
-                    ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
-                    ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_ENTER));
-                }
-            });
-        }
-
-        // Backspace with repeat-on-hold
-        if (btnDel != null) {
-            btnDel.setOnTouchListener(new View.OnTouchListener() {
-                private Runnable initialDel;
-                private Runnable repeatDel;
-
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    InputConnection ic = getCurrentInputConnection();
-                    if (ic == null) return false;
-
-                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                        ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL));
-                        initialDel = () -> {
-                            ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL));
-                            repeatDel = new Runnable() {
-                                @Override
-                                public void run() {
-                                    ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL));
-                                    handler.postDelayed(this, 100);
-                                }
-                            };
-                            handler.postDelayed(repeatDel, 100);
-                        };
-                        handler.postDelayed(initialDel, 400);
-                    } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                        if (initialDel != null) handler.removeCallbacks(initialDel);
-                        if (repeatDel != null) handler.removeCallbacks(repeatDel);
-                    }
-                    return true;
-                }
-            });
-        }
-
-        // Soft tap mic fallback
+        // Tap/hold fallback on the oak leaf button
         if (btnRecord != null) {
             btnRecord.setOnTouchListener((v, event) -> {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -304,7 +288,7 @@ public class WhisperInputMethodService extends InputMethodService {
                 if (message.equals(Recorder.MSG_RECORDING_DONE)) {
                     HapticFeedback.vibrate(mContext);
                     handler.post(() -> {
-                        if (btnRecord != null) btnRecord.setTextColor(0xFF78909C);
+                        if (btnRecord != null) btnRecord.clearColorFilter();
                     });
                     if (!isDiscarded) {
                         startTranscription();
@@ -317,7 +301,7 @@ public class WhisperInputMethodService extends InputMethodService {
                     HapticFeedback.vibrate(mContext);
                     if (countDownTimer != null) countDownTimer.cancel();
                     handler.post(() -> {
-                        if (btnRecord != null) btnRecord.setTextColor(0xFF78909C);
+                        if (btnRecord != null) btnRecord.clearColorFilter();
                         if (processingBar != null) processingBar.setProgress(0);
                     });
                 }
