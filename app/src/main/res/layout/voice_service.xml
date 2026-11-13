@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#151915"
+    android:background="#121518"
     android:clipToPadding="false"
     android:padding="0dp">
 
@@ -17,148 +17,148 @@
         android:max="100"
         android:progress="0"
         android:progressTint="#00E5FF"
-        android:progressBackgroundTint="#1E2A20"
-        android:indeterminateTint="#76C843" />
+        android:progressBackgroundTint="#1A2026"
+        android:indeterminateTint="#76FF03" />
 
     <!-- Spiraling Oak Branch Separator -->
     <ImageView
         android:id="@+id/banner_branch"
         android:layout_width="match_parent"
-        android:layout_height="13dp"
+        android:layout_height="12dp"
         android:scaleType="fitXY"
         android:src="@drawable/banner_spiral_branch"
         android:contentDescription="Spiraling Branch Banner" />
 
-    <!-- Expanded 54dp Toolbar Deck -->
+    <!-- 52dp Stone Rune Toolbar Deck -->
     <LinearLayout
         android:id="@+id/layout_buttons"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
+        android:layout_height="52dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingStart="3dp"
-        android:paddingEnd="3dp">
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
 
-        <!-- Keyboard Switch Acorn -->
+        <!-- 1. Keyboard Switch: Hexagon Stone (Chiseled Ruby Red) -->
         <TextView
             android:id="@+id/btnKeyboard"
-            android:layout_width="37dp"
-            android:layout_height="48dp"
+            android:layout_width="38dp"
+            android:layout_height="46dp"
             android:layout_marginHorizontal="1dp"
-            android:gravity="center_horizontal"
-            android:paddingTop="16dp"
+            android:gravity="center"
+            android:paddingBottom="2dp"
             android:text="⌨"
-            android:textColor="#FFE082"
-            android:textSize="13sp"
-            android:shadowColor="#FF8F00"
-            android:shadowRadius="6"
+            android:textColor="#FF5252"
+            android:textSize="14sp"
+            android:shadowColor="#D50000"
+            android:shadowRadius="10"
             android:shadowDx="0"
             android:shadowDy="0"
-            android:background="@drawable/acorn_keycap"
+            android:background="@drawable/rune_stone_hex"
             android:contentDescription="@string/exit_button" />
 
-        <!-- Comma Acorn -->
+        <!-- 2. Comma: River Pebble Stone (Chiseled Amber Orange) -->
         <TextView
             android:id="@+id/btnPunctComma"
-            android:layout_width="37dp"
-            android:layout_height="48dp"
+            android:layout_width="38dp"
+            android:layout_height="46dp"
             android:layout_marginHorizontal="1dp"
-            android:gravity="center_horizontal"
-            android:paddingTop="12dp"
+            android:gravity="center"
+            android:paddingBottom="5dp"
             android:text=","
-            android:textColor="#FFE082"
+            android:textColor="#FF9100"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:shadowColor="#FF8F00"
-            android:shadowRadius="8"
+            android:shadowColor="#E65100"
+            android:shadowRadius="10"
             android:shadowDx="0"
             android:shadowDy="0"
-            android:background="@drawable/acorn_keycap" />
+            android:background="@drawable/rune_stone_pebble" />
 
-        <!-- Period Acorn -->
+        <!-- 3. Period: Disc Stone (Chiseled Sunstone Yellow) -->
         <TextView
             android:id="@+id/btnPunctPeriod"
-            android:layout_width="37dp"
-            android:layout_height="48dp"
+            android:layout_width="38dp"
+            android:layout_height="46dp"
             android:layout_marginHorizontal="1dp"
-            android:gravity="center_horizontal"
-            android:paddingTop="11dp"
+            android:gravity="center"
+            android:paddingBottom="4dp"
             android:text="."
-            android:textColor="#FFE082"
+            android:textColor="#FFEA00"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:shadowColor="#FF8F00"
-            android:shadowRadius="8"
+            android:shadowColor="#F57F17"
+            android:shadowRadius="10"
             android:shadowDx="0"
             android:shadowDy="0"
-            android:background="@drawable/acorn_keycap" />
+            android:background="@drawable/rune_stone_disc" />
 
-        <!-- Question Mark Acorn -->
+        <!-- 4. Question Mark: Diamond Stone (Chiseled Jade Green) -->
         <TextView
             android:id="@+id/btnPunctQuestion"
-            android:layout_width="37dp"
-            android:layout_height="48dp"
+            android:layout_width="38dp"
+            android:layout_height="46dp"
             android:layout_marginHorizontal="1dp"
-            android:gravity="center_horizontal"
-            android:paddingTop="15dp"
+            android:gravity="center"
+            android:paddingBottom="2dp"
             android:text="?"
-            android:textColor="#FFE082"
+            android:textColor="#00E676"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:shadowColor="#FF8F00"
-            android:shadowRadius="8"
+            android:shadowColor="#007E33"
+            android:shadowRadius="10"
             android:shadowDx="0"
             android:shadowDy="0"
-            android:background="@drawable/acorn_keycap" />
+            android:background="@drawable/rune_stone_diamond" />
 
-        <!-- Exclamation Mark Acorn -->
+        <!-- 5. Exclamation Mark: Keystone Pillar (Chiseled Azure Blue) -->
         <TextView
             android:id="@+id/btnPunctExclamation"
-            android:layout_width="37dp"
-            android:layout_height="48dp"
+            android:layout_width="38dp"
+            android:layout_height="46dp"
             android:layout_marginHorizontal="1dp"
-            android:gravity="center_horizontal"
-            android:paddingTop="15dp"
+            android:gravity="center"
+            android:paddingBottom="2dp"
             android:text="!"
-            android:textColor="#FFE082"
+            android:textColor="#00B0FF"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:shadowColor="#FF8F00"
-            android:shadowRadius="8"
+            android:shadowColor="#0D47A1"
+            android:shadowRadius="10"
             android:shadowDx="0"
             android:shadowDy="0"
-            android:background="@drawable/acorn_keycap" />
+            android:background="@drawable/rune_stone_pillar" />
 
-        <!-- Apostrophe Acorn -->
+        <!-- 6. Apostrophe: Shield Stone (Chiseled Amethyst Violet) -->
         <TextView
             android:id="@+id/btnPunctApostrophe"
-            android:layout_width="37dp"
-            android:layout_height="48dp"
+            android:layout_width="38dp"
+            android:layout_height="46dp"
             android:layout_marginHorizontal="1dp"
-            android:gravity="center_horizontal"
-            android:paddingTop="15dp"
+            android:gravity="center"
+            android:paddingBottom="3dp"
             android:text="'"
-            android:textColor="#FFE082"
-            android:textSize="19sp"
+            android:textColor="#E040FB"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:shadowColor="#FF8F00"
-            android:shadowRadius="8"
+            android:shadowColor="#6A1B9A"
+            android:shadowRadius="10"
             android:shadowDx="0"
             android:shadowDy="0"
-            android:background="@drawable/acorn_keycap" />
+            android:background="@drawable/rune_stone_shield" />
 
-        <!-- Spacer -->
+        <!-- Flexible Spacer -->
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
-        <!-- Sacred Geometry Spiral Coin (Proportionally Scaled to 46dp) -->
+        <!-- Sacred Geometry Silver Coin (Recording Action Button) -->
         <ImageButton
             android:id="@+id/btnRecord"
-            android:layout_width="46dp"
-            android:layout_height="46dp"
-            android:layout_marginEnd="3dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="4dp"
             android:scaleType="fitCenter"
             android:padding="0dp"
             android:src="@drawable/ic_silver_coin_cybersigil"
