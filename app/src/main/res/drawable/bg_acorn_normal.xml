@@ -1,40 +1,45 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="34dp"
-    android:height="44dp"
-    android:viewportWidth="34"
-    android:viewportHeight="44">
+    android:width="36dp"
+    android:height="48dp"
+    android:viewportWidth="36"
+    android:viewportHeight="48">
 
-    <!-- High-Contrast Golden-Amber Outer Silhouette (Crisp Badge Outline) -->
+    <!-- Glowing Golden Outer Silhouette -->
     <path
         android:fillColor="#F5B041"
-        android:pathData="M14,1 h6 v5 h-2 v1 h5 v2 h3 v3 h2 v6 h1 v2 h-1 v3 h-1 v5 h-2 v5 h-2 v4 h-2 v3 h-2 v3 h-4 v-3 h-2 v-3 h-2 v-4 h-2 v-5 h-1 v-3 h-1 v-2 h1 v-6 h2 v-3 h3 v-2 h5 v-1 h-2 v-5 h4 z" />
+        android:pathData="M15,1 h6 v5 h-2 v1 h6 v2 h3 v3 h2 v7 h1 v2 h-1 v3 h-1 v6 h-2 v6 h-2 v4 h-2 v4 h-2 v3 h-4 v-3 h-2 v-4 h-2 v-4 h-2 v-6 h-1 v-3 h-1 v-2 h1 v-7 h2 v-3 h3 v-2 h6 v-1 h-2 v-5 h4 z" />
 
-    <!-- Inner Dark Shadow Boundary -->
+    <!-- Radiant Inner Gold Edge -->
     <path
-        android:fillColor="#1A0D04"
-        android:pathData="M15,2 h4 v4 h-1 v2 h5 v2 h3 v3 h1 v5 h-24 v-5 h1 v-3 h3 v-2 h5 v-2 h-1 v-4 h2 z M8,18 h18 v2 h-1 v5 h-2 v5 h-2 v4 h-2 v3 h-2 v2 h-2 v-2 h-2 v-3 h-2 v-4 h-2 v-5 h-1 v-5 h-2 z" />
+        android:fillColor="#FFD54F"
+        android:pathData="M16,2 h4 v4 h-1 v2 h6 v2 h2 v3 h1 v6 h-26 v-6 h1 v-3 h2 v-2 h6 v-2 h-1 v-4 h2 z M8,19 h20 v2 h-1 v6 h-2 v6 h-2 v4 h-2 v4 h-2 v2 h-2 v-2 h-2 v-4 h-2 v-4 h-2 v-6 h-1 v-6 h-2 z" />
 
-    <!-- Acorn Stem -->
-    <path android:fillColor="#4A2E19" android:pathData="M16,3 h2 v3 h-2 z" />
+    <!-- Dark Inner Separation Wall -->
+    <path
+        android:fillColor="#150802"
+        android:pathData="M16,3 h4 v3 h-1 v2 h5 v2 h2 v2 h1 v6 h-22 v-6 h1 v-2 h2 v-2 h5 v-2 h-1 v-3 h2 z M9,20 h18 v2 h-1 v5 h-2 v5 h-2 v4 h-2 v3 h-2 v2 h-2 v-2 h-2 v-3 h-2 v-4 h-2 v-5 h-1 v-5 h-2 z" />
 
-    <!-- Cap Body & Scale Texture -->
+    <!-- Stem -->
+    <path android:fillColor="#4E3118" android:pathData="M17,4 h2 v3 h-2 z" />
+
+    <!-- Cap Body & Pixel Bark Scales -->
     <path
         android:fillColor="#5D381B"
-        android:pathData="M9,9 h16 v2 h2 v5 h-20 v-5 h2 z" />
+        android:pathData="M9,10 h18 v2 h2 v5 h-22 v-5 h2 z" />
     <path
         android:fillColor="#8C582B"
-        android:pathData="M10,10 h2 v2 h-2 z M15,10 h2 v2 h-2 z M20,10 h2 v2 h-2 z M12,13 h2 v2 h-2 z M17,13 h2 v2 h-2 z M22,13 h2 v2 h-2 z" />
+        android:pathData="M10,11 h2 v2 h-2 z M15,11 h2 v2 h-2 z M20,11 h2 v2 h-2 z M24,11 h2 v2 h-2 z M12,14 h2 v2 h-2 z M17,14 h2 v2 h-2 z M22,14 h2 v2 h-2 z" />
 
-    <!-- Acorn Nut Body (Warm Golden Chestnut) -->
+    <!-- Outer Nut Shell -->
     <path
-        android:fillColor="#A05A20"
-        android:pathData="M8,19 h18 v3 h-1 v5 h-2 v4 h-2 v4 h-2 v3 h-2 v-3 h-2 v-4 h-2 v-4 h-1 v-5 h-2 z" />
+        android:fillColor="#8C4A15"
+        android:pathData="M9,20 h18 v3 h-1 v5 h-2 v5 h-2 v4 h-2 v3 h-2 v-3 h-2 v-4 h-2 v-5 h-1 v-5 h-2 z" />
 
-    <!-- Recessed Symbol Well (Deep Espresso for Maximum Text Contrast) -->
+    <!-- Expanded Deep Obsidian-Espresso Well (Provides High Contrast for Golden Glyph) -->
     <path
-        android:fillColor="#1E1005"
-        android:pathData="M10,21 h14 v11 h-1 v3 h-2 v3 h-2 v2 h-4 v-2 h-2 v-3 h-2 v-3 h-1 z" />
+        android:fillColor="#120601"
+        android:pathData="M10,21 h16 v13 h-1 v4 h-2 v4 h-2 v3 h-6 v-3 h-2 v-4 h-2 v-4 h-1 z" />
     <path
-        android:fillColor="#381E0B"
-        android:pathData="M11,22 h12 v9 h-1 v3 h-2 v2 h-6 v-2 h-2 v-3 h-1 z" />
+        android:fillColor="#240D03"
+        android:pathData="M11,22 h14 v11 h-1 v4 h-2 v3 h-2 v2 h-4 v-2 h-2 v-3 h-2 v-4 h-1 z" />
 </vector>
