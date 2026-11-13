@@ -39,4 +39,18 @@ This fork replaces the original Whisper TensorFlow Lite inference backend with S
 The app expects the Moonshine ONNX model files in the application's external files directory:  
 `/sdcard/Android/data/org.woheller69.whisper/files/`
 
-Download the pre-converted INT8 model files from [csukuangfj/sherpa-onnx-moonshine-tiny-en-int8](
+Download the pre-converted INT8 model files from [csukuangfj/sherpa-onnx-moonshine-tiny-en-int8](https://huggingface.co/csukuangfj/sherpa-onnx-moonshine-tiny-en-int8):
+* `preprocess.onnx`
+* `encode.int8.onnx`
+* `uncached_decode.int8.onnx`
+* `cached_decode.int8.onnx`
+* `tokens.txt`
+
+### 2. Push via ADB
+```cmd
+adb shell mkdir -p /sdcard/Android/data/org.woheller69.whisper/files/
+adb push preprocess.onnx /sdcard/Android/data/org.woheller69.whisper/files/
+adb push encode.int8.onnx /sdcard/Android/data/org.woheller69.whisper/files/
+adb push uncached_decode.int8.onnx /sdcard/Android/data/org.woheller69.whisper/files/
+adb push cached_decode.int8.onnx /sdcard/Android/data/org.woheller69.whisper/files/
+adb push tokens.txt /sdcard/Android/data/org.woheller69.whisper/files/
