@@ -1,4 +1,4 @@
-package org.woheller69.whisper;
+package com.whispertflite;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -9,6 +9,8 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.animation.OvershootInterpolator;
 import androidx.appcompat.widget.AppCompatTextView;
+
+import com.whispertflite.R;
 
 public class AcornButton extends AppCompatTextView {
 
@@ -30,7 +32,6 @@ public class AcornButton extends AppCompatTextView {
     }
 
     private void init() {
-        // Use the centered layer-list background to keep the acorn perfectly round
         setBackgroundResource(R.drawable.bg_acorn_button);
         setGravity(Gravity.CENTER);
     }
@@ -54,7 +55,7 @@ public class AcornButton extends AppCompatTextView {
         rotate.setDuration(420);
         rotate.setInterpolator(new OvershootInterpolator(1.2f));
 
-        // Tactile compression
+        // Tactile bounce
         ObjectAnimator scaleX = ObjectAnimator.ofFloat(this, "scaleX", 1f, 0.86f, 1.05f, 1f);
         scaleX.setDuration(420);
 
