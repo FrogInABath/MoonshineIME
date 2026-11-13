@@ -1,0 +1,42 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="38dp"
+    android:height="48dp"
+    android:viewportWidth="100"
+    android:viewportHeight="120">
+
+    <!-- Cast Shadow -->
+    <path
+        android:fillColor="#10000000"
+        android:pathData="M50,10 L92,32 L92,92 L50,116 L8,92 L8,32 Z" />
+
+    <!-- Chiseled Outer Dark Bevel Rim -->
+    <path
+        android:fillColor="#1B1F24"
+        android:pathData="M50,6 L90,28 L90,88 L50,112 L10,88 L10,28 Z" />
+
+    <!-- Top-Left Sunlight Glint Edge -->
+    <path
+        android:fillColor="#6C7684"
+        android:pathData="M50,6 L90,28 L87,30 L50,9 L13,30 L10,28 Z M10,28 L13,30 L13,86 L10,88 Z" />
+
+    <!-- Main Textured Slate Stone Face -->
+    <path
+        android:fillColor="#343A43"
+        android:pathData="M50,9 L87,30 L87,86 L50,109 L13,86 L13,30 Z" />
+
+    <!-- Stone Facet Cuts / Chiseled Planes -->
+    <path
+        android:fillColor="#404752"
+        android:pathData="M50,9 L87,30 L68,44 L50,32 Z M13,30 L50,9 L50,32 L32,44 Z" />
+    <path
+        android:fillColor="#282D35"
+        android:pathData="M87,86 L50,109 L50,88 L68,76 Z M13,86 L50,109 L50,88 L32,76 Z" />
+
+    <!-- Deep Central Chiseled Socket (Recessed Bed for Glowing Rune) -->
+    <path
+        android:fillColor="#111317"
+        android:pathData="M50,26 L76,40 L76,76 L50,92 L24,76 L24,40 Z" />
+    <path
+        android:fillColor="#1A1D23"
+        android:pathData="M50,29 L73,42 L73,74 L50,89 L27,74 L27,42 Z" />
+</vector>
