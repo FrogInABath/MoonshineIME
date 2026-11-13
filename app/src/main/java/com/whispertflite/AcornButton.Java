@@ -6,10 +6,11 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.animation.OvershootInterpolator;
-import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.appcompat.widget.AppCompatTextView;
 
-public class AcornButton extends AppCompatImageButton {
+public class AcornButton extends AppCompatTextView {
 
     private boolean isSpinning = false;
 
@@ -29,9 +30,9 @@ public class AcornButton extends AppCompatImageButton {
     }
 
     private void init() {
-        setImageResource(R.drawable.ic_acorn);
-        setBackgroundResource(android.R.color.transparent);
-        setScaleType(ScaleType.CENTER_INSIDE);
+        // Sets the acorn graphic as the button's background
+        setBackgroundResource(R.drawable.ic_acorn);
+        setGravity(Gravity.CENTER);
     }
 
     @Override
@@ -45,21 +46,20 @@ public class AcornButton extends AppCompatImageButton {
     private void playSpinAnimation() {
         isSpinning = true;
 
-        // Anchor rotation directly in the center
         setPivotX(getWidth() / 2f);
         setPivotY(getHeight() / 2f);
 
-        // 360-degree spin
+        // 360-degree flat spin
         ObjectAnimator rotate = ObjectAnimator.ofFloat(this, "rotation", 0f, 360f);
-        rotate.setDuration(450);
+        rotate.setDuration(420);
         rotate.setInterpolator(new OvershootInterpolator(1.2f));
 
-        // Squash and stretch bounce
-        ObjectAnimator scaleX = ObjectAnimator.ofFloat(this, "scaleX", 1f, 0.88f, 1.05f, 1f);
-        scaleX.setDuration(450);
+        // Tactile compression
+        ObjectAnimator scaleX = ObjectAnimator.ofFloat(this, "scaleX", 1f, 0.86f, 1.05f, 1f);
+        scaleX.setDuration(420);
 
-        ObjectAnimator scaleY = ObjectAnimator.ofFloat(this, "scaleY", 1f, 0.88f, 1.05f, 1f);
-        scaleY.setDuration(450);
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(this, "scaleY", 1f, 0.86f, 1.05f, 1f);
+        scaleY.setDuration(420);
 
         AnimatorSet set = new AnimatorSet();
         set.playTogether(rotate, scaleX, scaleY);
