@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- 8-Bit Pixelated Oak Leaf Silhouette -->
+    <!-- Dark Border Outline -->
+    <path
+        android:fillColor="#1B381B"
+        android:pathData="M9,2 h6 v2 h2 v3 h2 v4 h-1 v3 h-2 v3 h-2 v3 h-2 v2 h-2 v-2 h1 v-2 h2 v-3 h2 v-2 h1 v-2 h-1 v-1 h-3 v1 h-2 v-2 h-1 v-3 h1 v-2 h2 v-1 h-2 v-2 h1 z" />
+    <!-- Bright Green Pixel Fill -->
+    <path
+        android:fillColor="#76C843"
+        android:pathData="M10,4 h4 v2 h2 v3 h1 v3 h-2 v2 h-1 v-1 h-2 v-2 h-1 v-2 h-1 v-2 h1 z" />
+    <!-- Golden Leaf Highlight -->
+    <path
+        android:fillColor="#A9E04B"
+        android:pathData="M11,5 h2 v3 h1 v2 h-2 v-3 h-1 z" />
+    <!-- Center Leaf Vein & Stem -->
+    <path
+        android:fillColor="#4D8C26"
+        android:pathData="M12,7 h1 v7 h-1 z M11,17 h1 v3 h-1 z" />
+</vector>
