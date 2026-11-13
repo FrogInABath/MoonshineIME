@@ -1,7 +1,25 @@
 
 
 ```text
- 
+,-.____.-.____.-.____.-.____.-.____.-.____.-.____.-.____.-.
+ (  /\    /\    /\    /\    /\    /\    /\    /\    /\    /\  )
+  `-'  `-'  `-'  `-'  `-'  `-'  `-'  `-'  `-'  `-'  `-'  `-'
+═══════════════════════════════════════════════════════════════
+ __  __  ___   ___  _  _ ___ _  _ ___ _  _ ___   ___ __  __ ___ 
+|  \/  |/ _ \ / _ \| \| / __| || |_ _| \| | __| |_ _|  \/  | __|
+| |\/| | (_) | (_) | .` \__ \ __ || || .` | _|   | || |\/| | _| 
+|_|  |_|\___/ \___/|_|\_|___/_||_|___|_|\_|___| |___|_|  |_|___|
+═══════════════════════════════════════════════════════════════
+       [ Snapdragon 215 • 32-Bit ARMv7-A • Sherpa-ONNX INT8 ]
+───────────────────────────────────────────────────────────────
+  (HEX)   (PEB)   (DSC)   (DIA)   (OBS)   (SHD)     ((◎))
+  /===\   .---.   .---.    / \    .---.   .---.    .-'-'-.
+ |[ ⌨ ]| |( , )| |( . )|  <? ?>  |[ ! ]| |['']|   | (©) |
+  \===/   '---'   '---'    \ /    '---'    \_/     '-.-.-'
+  [RUB]   [AMB]   [SUN]   [JAD]   [AZU]   [AME]    [COIN]
+   RED     ORG     YEL     GRN     BLU     VIO      CYAN
+───────────────────────────────────────────────────────────────
+   TAN CANVAS VELLUM DECK   •   SPIRALING BRANCH SEPARATOR
 A modified fork of [woheller69/whisperIME](https://github.com/woheller69/whisperIME) tailored specifically for the CAT S22 Flip running Android Go.
 
 This fork replaces the original Whisper TensorFlow Lite inference backend with Sherpa-ONNX Moonshine Tiny (INT8) and overhauls the interface into a compact, fantasy-themed stone rune toolbar designed for the phone's 2.8" display.
