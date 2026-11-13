@@ -7,7 +7,7 @@
     android:clipToPadding="false"
     android:padding="0dp">
 
-    <!-- Slim 3dp Progress Bar -->
+    <!-- Progress Bar -->
     <ProgressBar
         android:id="@+id/processing_bar"
         style="?android:attr/progressBarStyleHorizontal"
@@ -20,139 +20,145 @@
         android:progressBackgroundTint="#1E2A20"
         android:indeterminateTint="#76C843" />
 
-    <!-- Spiraling Oak Branch & Leaves Top Banner (12dp Separator) -->
+    <!-- Spiraling Oak Branch Separator -->
     <ImageView
         android:id="@+id/banner_branch"
         android:layout_width="match_parent"
-        android:layout_height="12dp"
+        android:layout_height="13dp"
         android:scaleType="fitXY"
         android:src="@drawable/banner_spiral_branch"
         android:contentDescription="Spiraling Branch Banner" />
 
-    <!-- 48dp Toolbar Deck -->
+    <!-- Expanded 54dp Toolbar Deck -->
     <LinearLayout
         android:id="@+id/layout_buttons"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="54dp"
         android:orientation="horizontal"
-        android:gravity="center"
-        android:paddingStart="4dp"
-        android:paddingEnd="4dp">
+        android:gravity="center_vertical"
+        android:paddingStart="3dp"
+        android:paddingEnd="3dp">
 
-        <!-- Keyboard Switch -->
+        <!-- Keyboard Switch Acorn -->
         <TextView
             android:id="@+id/btnKeyboard"
-            android:layout_width="38dp"
-            android:layout_height="44dp"
+            android:layout_width="37dp"
+            android:layout_height="48dp"
             android:layout_marginHorizontal="1dp"
-            android:gravity="center"
-            android:paddingTop="12dp"
+            android:gravity="center_horizontal"
+            android:paddingTop="16dp"
             android:text="⌨"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:shadowColor="#000000"
-            android:shadowRadius="3"
-            android:shadowDy="1"
+            android:textColor="#FFE082"
+            android:textSize="13sp"
+            android:shadowColor="#FF8F00"
+            android:shadowRadius="6"
+            android:shadowDx="0"
+            android:shadowDy="0"
             android:background="@drawable/acorn_keycap"
             android:contentDescription="@string/exit_button" />
 
-        <!-- Comma -->
+        <!-- Comma Acorn -->
         <TextView
             android:id="@+id/btnPunctComma"
-            android:layout_width="38dp"
-            android:layout_height="44dp"
+            android:layout_width="37dp"
+            android:layout_height="48dp"
             android:layout_marginHorizontal="1dp"
-            android:gravity="center"
-            android:paddingTop="9dp"
+            android:gravity="center_horizontal"
+            android:paddingTop="12dp"
             android:text=","
-            android:textColor="#FFFEEA"
+            android:textColor="#FFE082"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:shadowColor="#000000"
-            android:shadowRadius="4"
-            android:shadowDy="2"
+            android:shadowColor="#FF8F00"
+            android:shadowRadius="8"
+            android:shadowDx="0"
+            android:shadowDy="0"
             android:background="@drawable/acorn_keycap" />
 
-        <!-- Period -->
+        <!-- Period Acorn -->
         <TextView
             android:id="@+id/btnPunctPeriod"
-            android:layout_width="38dp"
-            android:layout_height="44dp"
+            android:layout_width="37dp"
+            android:layout_height="48dp"
             android:layout_marginHorizontal="1dp"
-            android:gravity="center"
-            android:paddingTop="8dp"
+            android:gravity="center_horizontal"
+            android:paddingTop="11dp"
             android:text="."
-            android:textColor="#FFFEEA"
+            android:textColor="#FFE082"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:shadowColor="#000000"
-            android:shadowRadius="4"
-            android:shadowDy="2"
+            android:shadowColor="#FF8F00"
+            android:shadowRadius="8"
+            android:shadowDx="0"
+            android:shadowDy="0"
             android:background="@drawable/acorn_keycap" />
 
-        <!-- Question Mark -->
+        <!-- Question Mark Acorn -->
         <TextView
             android:id="@+id/btnPunctQuestion"
-            android:layout_width="38dp"
-            android:layout_height="44dp"
+            android:layout_width="37dp"
+            android:layout_height="48dp"
             android:layout_marginHorizontal="1dp"
-            android:gravity="center"
-            android:paddingTop="12dp"
+            android:gravity="center_horizontal"
+            android:paddingTop="15dp"
             android:text="?"
-            android:textColor="#FFFEEA"
-            android:textSize="18sp"
+            android:textColor="#FFE082"
+            android:textSize="17sp"
             android:textStyle="bold"
-            android:shadowColor="#000000"
-            android:shadowRadius="4"
-            android:shadowDy="2"
+            android:shadowColor="#FF8F00"
+            android:shadowRadius="8"
+            android:shadowDx="0"
+            android:shadowDy="0"
             android:background="@drawable/acorn_keycap" />
 
-        <!-- Exclamation Mark -->
+        <!-- Exclamation Mark Acorn -->
         <TextView
             android:id="@+id/btnPunctExclamation"
-            android:layout_width="38dp"
-            android:layout_height="44dp"
+            android:layout_width="37dp"
+            android:layout_height="48dp"
             android:layout_marginHorizontal="1dp"
-            android:gravity="center"
-            android:paddingTop="12dp"
+            android:gravity="center_horizontal"
+            android:paddingTop="15dp"
             android:text="!"
-            android:textColor="#FFFEEA"
-            android:textSize="18sp"
+            android:textColor="#FFE082"
+            android:textSize="17sp"
             android:textStyle="bold"
-            android:shadowColor="#000000"
-            android:shadowRadius="4"
-            android:shadowDy="2"
+            android:shadowColor="#FF8F00"
+            android:shadowRadius="8"
+            android:shadowDx="0"
+            android:shadowDy="0"
             android:background="@drawable/acorn_keycap" />
 
-        <!-- Apostrophe -->
+        <!-- Apostrophe Acorn -->
         <TextView
             android:id="@+id/btnPunctApostrophe"
-            android:layout_width="38dp"
-            android:layout_height="44dp"
+            android:layout_width="37dp"
+            android:layout_height="48dp"
             android:layout_marginHorizontal="1dp"
-            android:gravity="center"
-            android:paddingTop="12dp"
+            android:gravity="center_horizontal"
+            android:paddingTop="15dp"
             android:text="'"
-            android:textColor="#FFFEEA"
-            android:textSize="20sp"
+            android:textColor="#FFE082"
+            android:textSize="19sp"
             android:textStyle="bold"
-            android:shadowColor="#000000"
-            android:shadowRadius="4"
-            android:shadowDy="2"
+            android:shadowColor="#FF8F00"
+            android:shadowRadius="8"
+            android:shadowDx="0"
+            android:shadowDy="0"
             android:background="@drawable/acorn_keycap" />
 
-        <!-- Spacing view -->
+        <!-- Spacer -->
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
-        <!-- Sacred Geometry Spiral Silver Coin Button -->
+        <!-- Sacred Geometry Spiral Coin (Proportionally Scaled to 46dp) -->
         <ImageButton
             android:id="@+id/btnRecord"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_marginEnd="4dp"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginEnd="3dp"
             android:scaleType="fitCenter"
             android:padding="0dp"
             android:src="@drawable/ic_silver_coin_cybersigil"
