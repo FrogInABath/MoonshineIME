@@ -1,63 +1,40 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="28dp"
-    android:viewportWidth="24"
-    android:viewportHeight="28">
+    android:width="34dp"
+    android:height="44dp"
+    android:viewportWidth="34"
+    android:viewportHeight="44">
 
-    <!-- 8-Bit Dark Pixel Silhouette / Outline -->
-    <path
-        android:fillColor="#1B0E05"
-        android:pathData="M11,1 h2 v2 h3 v1 h3 v2 h2 v5 h1 v2 h-1 v1 h-1 v3 h-1 v3 h-1 v3 h-2 v2 h-2 v2 h-2 v-2 h-2 v-2 h-1 v-3 h-1 v-3 h-1 v-3 h-1 v-1 h-1 v-2 h1 v-5 h2 v-2 h3 v-1 h3 z" />
+    <!-- Acorn Stem -->
+    <path android:fillColor="#2A170B" android:pathData="M15,2 h4 v5 h-4 z" />
+    <path android:fillColor="#4A2E19" android:pathData="M16,3 h2 v3 h-2 z" />
 
-    <!-- Stem -->
+    <!-- Pixel Acorn Cap -->
     <path
-        android:fillColor="#3D200E"
-        android:pathData="M11,2 h2 v3 h-2 z" />
+        android:fillColor="#180C04"
+        android:pathData="M8,7 h18 v2 h3 v3 h2 v6 h-26 v-6 h2 v-3 h1 z" />
     <path
-        android:fillColor="#5A3519"
-        android:pathData="M11,2 h1 v2 h-1 z" />
+        android:fillColor="#543319"
+        android:pathData="M9,9 h16 v2 h2 v5 h-20 v-5 h2 z" />
+    <!-- Cap Cross-hatch Scales -->
+    <path
+        android:fillColor="#7A4D27"
+        android:pathData="M10,10 h2 v2 h-2 z M15,10 h2 v2 h-2 z M20,10 h2 v2 h-2 z M12,13 h2 v2 h-2 z M17,13 h2 v2 h-2 z M22,13 h2 v2 h-2 z" />
 
-    <!-- Cap Base (Dark Cupule Wood) -->
+    <!-- Acorn Nut Outline -->
     <path
-        android:fillColor="#523219"
-        android:pathData="M8,4 h8 v1 h3 v2 h2 v4 h-17 v-4 h2 v-2 h2 z" />
+        android:fillColor="#180C04"
+        android:pathData="M7,18 h20 v3 h-1 v5 h-2 v5 h-2 v4 h-2 v3 h-2 v2 h-2 v-2 h-2 v-3 h-2 v-4 h-2 v-5 h-1 v-5 h-2 z" />
 
-    <!-- Cap Pixel Scales & Texture -->
+    <!-- Acorn Nut Body (Warm Chestnut) -->
     <path
-        android:fillColor="#704423"
-        android:pathData="M9,5 h2 v1 h-2 z M14,5 h2 v1 h-2 z M7,7 h2 v1 h-2 z M11,7 h2 v1 h-2 z M16,7 h2 v1 h-2 z M9,9 h2 v1 h-2 z M14,9 h2 v1 h-2 z" />
-    <path
-        android:fillColor="#381F0D"
-        android:pathData="M8,6 h1 v1 h-1 z M13,6 h1 v1 h-1 z M10,8 h1 v1 h-1 z M15,8 h1 v1 h-1 z" />
+        android:fillColor="#8C4E18"
+        android:pathData="M8,19 h18 v3 h-1 v5 h-2 v4 h-2 v4 h-2 v3 h-2 v-3 h-2 v-4 h-2 v-4 h-1 v-5 h-2 z" />
 
-    <!-- Cap Bottom Rim Shelf -->
+    <!-- Recessed Symbol Well (Dark background so ivory symbols POP) -->
     <path
-        android:fillColor="#7D4E28"
-        android:pathData="M3,11 h18 v2 h-18 z" />
+        android:fillColor="#231307"
+        android:pathData="M10,21 h14 v11 h-1 v3 h-2 v3 h-2 v2 h-4 v-2 h-2 v-3 h-2 v-3 h-1 z" />
     <path
-        android:fillColor="#331908"
-        android:pathData="M3,12 h18 v1 h-18 z" />
-
-    <!-- Acorn Nut Body (Warm Golden Chestnut) -->
-    <path
-        android:fillColor="#B86E28"
-        android:pathData="M5,13 h14 v4 h-1 v3 h-1 v3 h-2 v2 h-2 v2 h-2 v-2 h-2 v-2 h-1 v-3 h-1 v-3 h-1 v-1 h-1 z" />
-
-    <!-- Nut Left-Side 8-Bit Specular Highlight -->
-    <path
-        android:fillColor="#E59842"
-        android:pathData="M6,14 h3 v5 h-2 v2 h-1 z" />
-    <path
-        android:fillColor="#FBE096"
-        android:pathData="M7,15 h1 v3 h-1 z" />
-
-    <!-- Nut Right-Side Shadow -->
-    <path
-        android:fillColor="#8C4915"
-        android:pathData="M16,14 h2 v4 h-1 v3 h-1 v2 h-1 v-2 h1 v-3 h-1 z" />
-
-    <!-- Nut Bottom Tip -->
-    <path
-        android:fillColor="#5A2E0C"
-        android:pathData="M11,25 h2 v2 h-2 z" />
+        android:fillColor="#3D220E"
+        android:pathData="M11,22 h12 v9 h-1 v3 h-2 v2 h-6 v-2 h-2 v-3 h-1 z" />
 </vector>
