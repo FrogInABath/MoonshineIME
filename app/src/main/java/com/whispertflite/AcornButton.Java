@@ -30,8 +30,8 @@ public class AcornButton extends AppCompatTextView {
     }
 
     private void init() {
-        // Sets the acorn graphic as the button's background
-        setBackgroundResource(R.drawable.ic_acorn);
+        // Use the centered layer-list background to keep the acorn perfectly round
+        setBackgroundResource(R.drawable.bg_acorn_button);
         setGravity(Gravity.CENTER);
     }
 
