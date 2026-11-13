@@ -4,39 +4,62 @@
     android:viewportWidth="100"
     android:viewportHeight="120">
 
-    <!-- Cast Shadow -->
+    <!-- Heavy Drop Shadow Against Canvas -->
     <path
-        android:fillColor="#10000000"
-        android:pathData="M50,10 L92,32 L92,92 L50,116 L8,92 L8,32 Z" />
+        android:fillColor="#382E1E"
+        android:pathData="M50,11 L94,34 L93,93 L50,118 L7,93 L7,34 Z" />
 
-    <!-- Chiseled Outer Dark Bevel Rim -->
+    <!-- Weathered Chipped Outer Basalt Rim -->
     <path
-        android:fillColor="#1B1F24"
-        android:pathData="M50,6 L90,28 L90,88 L50,112 L10,88 L10,28 Z" />
+        android:fillColor="#15191E"
+        android:pathData="M50,6 L84,24 L91,30 L90,86 L85,90 L50,112 L12,89 L9,84 L10,29 L16,24 Z" />
 
-    <!-- Top-Left Sunlight Glint Edge -->
+    <!-- Chipped Weathering Highlights -->
     <path
-        android:fillColor="#6C7684"
-        android:pathData="M50,6 L90,28 L87,30 L50,9 L13,30 L10,28 Z M10,28 L13,30 L13,86 L10,88 Z" />
+        android:fillColor="#687382"
+        android:pathData="M50,6 L84,24 L82,26 L50,9 L16,26 L16,24 Z M10,29 L13,31 L11,83 L9,84 Z" />
 
-    <!-- Main Textured Slate Stone Face -->
+    <!-- Main Ancient Slate Body -->
     <path
-        android:fillColor="#343A43"
-        android:pathData="M50,9 L87,30 L87,86 L50,109 L13,86 L13,30 Z" />
+        android:fillColor="#2D333C"
+        android:pathData="M50,9 L83,26 L88,86 L50,109 L12,86 L13,29 Z" />
 
-    <!-- Stone Facet Cuts / Chiseled Planes -->
+    <!-- Jagged Weathering Fracture Running Across Top Right -->
     <path
-        android:fillColor="#404752"
-        android:pathData="M50,9 L87,30 L68,44 L50,32 Z M13,30 L50,9 L50,32 L32,44 Z" />
+        android:strokeColor="#111418"
+        android:strokeWidth="1.8"
+        android:pathData="M50,9 L58,22 L54,32 L68,44 L83,48" />
     <path
-        android:fillColor="#282D35"
-        android:pathData="M87,86 L50,109 L50,88 L68,76 Z M13,86 L50,109 L50,88 L32,76 Z" />
+        android:strokeColor="#566270"
+        android:strokeWidth="0.8"
+        android:pathData="M50,10 L58,23 L54,33 L68,45 L83,49" />
 
-    <!-- Deep Central Chiseled Socket (Recessed Bed for Glowing Rune) -->
+    <!-- Chiseled Facet Slopes -->
     <path
-        android:fillColor="#111317"
-        android:pathData="M50,26 L76,40 L76,76 L50,92 L24,76 L24,40 Z" />
+        android:fillColor="#3A424D"
+        android:pathData="M50,9 L83,26 L68,44 L50,32 Z M13,29 L50,9 L50,32 L32,44 Z" />
     <path
-        android:fillColor="#1A1D23"
-        android:pathData="M50,29 L73,42 L73,74 L50,89 L27,74 L27,42 Z" />
+        android:fillColor="#22272E"
+        android:pathData="M88,86 L50,109 L50,88 L68,76 Z M12,86 L50,109 L50,88 L32,76 Z" />
+
+    <!-- Deep Incised Trench Chisel Wall (Creates Inset Groove Effect) -->
+    <path
+        android:fillColor="#0B0D10"
+        android:pathData="M50,25 L77,39 L77,77 L50,93 L23,77 L23,39 Z" />
+    <!-- Lower Chisel Floor -->
+    <path
+        android:fillColor="#181B21"
+        android:pathData="M50,28 L74,41 L74,74 L50,90 L26,74 L26,41 Z" />
+    <!-- Chiseled Bottom Edge Light Catch -->
+    <path
+        android:fillColor="#3C4450"
+        android:pathData="M23,77 L50,93 L77,77 L74,74 L50,90 L26,74 Z" />
+
+    <!-- Clinging Ancient Moss (Bottom-Left and Top Crevice) -->
+    <path
+        android:fillColor="#2E4A23"
+        android:pathData="M11,84 Q18,72 26,80 Q32,88 24,94 Q15,92 11,84 Z M48,7 Q56,4 58,10 Q52,14 48,7 Z" />
+    <path
+        android:fillColor="#52783D"
+        android:pathData="M13,84 Q18,76 22,81 Q26,86 21,90 Q15,88 13,84 Z M49,7 Q53,5 55,9 Q52,11 49,7 Z" />
 </vector>
