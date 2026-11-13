@@ -1,44 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="96dp"
-    android:height="96dp"
+    android:width="44dp"
+    android:height="44dp"
     android:viewportWidth="96"
     android:viewportHeight="96">
-
-    <!-- Soft Drop Shadow Underneath -->
-    <path
-        android:fillColor="#26000000"
-        android:pathData="M 28,86 C 40,94 56,94 68,86 C 58,82 38,82 28,86 Z" />
 
     <!-- Nut Body (Base Shell) -->
     <path
         android:fillColor="#8C5329"
-        android:pathData="M 22,40 C 20,62 34,84 48,88 C 62,84 76,62 74,40 Z" />
+        android:pathData="M 22,38 C 20,62 34,86 48,90 C 62,86 76,62 74,38 Z" />
 
     <!-- Nut Body Shading (Darker Rim / Bevel) -->
     <path
         android:fillColor="#683815"
-        android:pathData="M 48,88 C 62,84 76,62 74,40 C 66,42 58,45 48,46 C 38,45 30,42 22,40 C 20,62 34,84 48,88 Z" />
+        android:pathData="M 48,90 C 62,86 76,62 74,38 C 66,40 58,42 48,43 C 38,42 30,40 22,38 C 20,62 34,86 48,90 Z" />
 
-    <!-- Nut Core Warm Highlight -->
+    <!-- Nut Core Warm Highlight (Engraving Surface for Text) -->
     <path
-        android:fillColor="#AA6936"
-        android:pathData="M 26,44 C 26,60 36,78 48,83 C 54,78 61,67 63,55 C 50,56 36,52 26,44 Z" />
+        android:fillColor="#9C5A2A"
+        android:pathData="M 26,42 C 26,58 36,80 48,85 C 54,80 62,69 64,55 C 50,56 36,51 26,42 Z" />
 
     <!-- Specular Gloss Reflection (Light Glare) -->
     <path
-        android:fillColor="#33FFFFFF"
-        android:pathData="M 27,48 C 26,58 31,69 38,76 C 36,70 33,60 33,50 C 33,48 31,48 27,48 Z" />
+        android:fillColor="#22FFFFFF"
+        android:pathData="M 27,46 C 26,56 31,69 38,76 C 36,70 33,60 33,48 C 33,46 31,46 27,46 Z" />
 
     <!-- Acorn Cap (Cupule Base) -->
     <path
         android:fillColor="#4A2E16"
-        android:pathData="M 18,36 C 18,22 32,18 48,18 C 64,18 78,22 78,36 C 78,42 66,45 48,45 C 30,45 18,42 18,36 Z" />
+        android:pathData="M 17,34 C 17,20 31,16 48,16 C 65,16 79,20 79,34 C 79,40 67,43 48,43 C 29,43 17,40 17,34 Z" />
 
     <!-- Cap Woody Rim -->
     <path
         android:fillColor="#38210C"
-        android:pathData="M 18,36 C 26,41 38,44 48,44 C 58,44 70,41 78,36 C 78,39 68,43 48,43 C 28,43 18,39 18,36 Z" />
+        android:pathData="M 17,34 C 25,39 37,42 48,42 C 59,42 71,39 79,34 C 79,37 69,41 48,41 C 27,41 17,37 17,34 Z" />
 
     <!-- Cap Scale Texture Pattern -->
     <path
@@ -46,18 +41,18 @@
         android:strokeWidth="1.2"
         android:strokeLineCap="round"
         android:pathData="
-            M 30,26 Q 34,29 38,26
-            M 42,24 Q 48,27 54,24
-            M 58,26 Q 62,29 66,26
-            M 24,32 Q 30,36 36,32
-            M 42,32 Q 48,36 54,32
-            M 60,32 Q 66,36 72,32
-            M 34,38 Q 40,41 46,38
-            M 50,38 Q 56,41 62,38" />
+            M 30,24 Q 34,27 38,24
+            M 42,22 Q 48,25 54,22
+            M 58,24 Q 62,27 66,24
+            M 23,30 Q 29,34 35,30
+            M 42,30 Q 48,34 54,30
+            M 61,30 Q 67,34 73,30
+            M 34,36 Q 40,39 46,36
+            M 50,36 Q 56,39 62,36" />
 
     <!-- Stem (Peduncle) -->
     <path
         android:fillColor="#3A220F"
-        android:pathData="M 45,19 C 44,11 40,8 41,5 C 43,5 47,8 49,19 Z" />
+        android:pathData="M 45,17 C 44,9 40,6 41,3 C 43,3 47,6 49,17 Z" />
 
 </vector>
