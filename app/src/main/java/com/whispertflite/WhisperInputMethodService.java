@@ -75,27 +75,23 @@ public class WhisperInputMethodService extends InputMethodService {
         super.onDestroy();
     }
 
-    // --- Critical for CAT S22 Flip: Force Soft Keyboard with Physical Keypad Present ---
+    // --- CAT S22 Flip Hardware Keypad Overrides: Force Soft Keyboard on Tap ---
 
     @Override
     public boolean onEvaluateInputViewShown() {
         super.onEvaluateInputViewShown();
-        return true; // Overrides Android default which hides soft IME when physical keypad is present
+        // Overrides Android Go default which suppresses soft IME when a physical keypad is present
+        return true;
     }
 
     @Override
     public boolean onShowInputRequested(int flags, boolean configChange) {
-        return true; // Always show when a text box requests input
+        return true;
     }
 
     @Override
     public void onStartInput(EditorInfo attribute, boolean restarting) {
-        if (attribute.inputType == EditorInfo.TYPE_NULL) {
-            deinitModel();
-            if (mRecorder != null && mRecorder.isInProgress()) {
-                mRecorder.stop();
-            }
-        }
+        super.onStartInput(attribute, restarting);
     }
 
     @Override
@@ -104,6 +100,9 @@ public class WhisperInputMethodService extends InputMethodService {
         if (mWhisper == null) {
             initModel();
         }
+        // Force the IME window to become immediately visible upon field focus
+        showWindow(true);
+        requestShowSelf(0);
     }
 
     private boolean isInputTargetValid() {
@@ -173,7 +172,8 @@ public class WhisperInputMethodService extends InputMethodService {
 
         handler.post(() -> {
             if (btnRecord != null) {
-                btnRecord.setColorFilter(Color.parseColor("#FF6D00"), PorterDuff.Mode.SRC_IN);
+                // Electric Cyan Cybersigil Glow
+                btnRecord.setColorFilter(Color.parseColor("#00E5FF"), PorterDuff.Mode.SRC_ATOP);
                 animateHorizontalSpin(btnRecord);
             }
             if (processingBar != null) {
