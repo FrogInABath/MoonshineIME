@@ -1,0 +1,37 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="38dp"
+    android:height="48dp"
+    android:viewportWidth="100"
+    android:viewportHeight="120">
+
+    <!-- Dark Chiseled Keystone Outer Border -->
+    <path
+        android:fillColor="#181B20"
+        android:pathData="M24,6 L76,6 L88,112 L12,112 Z" />
+
+    <!-- Top & Left Light Catch Lines -->
+    <path
+        android:fillColor="#75808F"
+        android:pathData="M24,6 L76,6 L75,9 L26,9 L15,110 L12,112 Z" />
+
+    <!-- Slate Monolith Center Body -->
+    <path
+        android:fillColor="#343A43"
+        android:pathData="M26,9 L74,9 L85,109 L15,109 Z" />
+
+    <!-- Vertical Chisel Fluting -->
+    <path
+        android:fillColor="#444C57"
+        android:pathData="M26,9 L50,9 L47,109 L15,109 Z" />
+    <path
+        android:fillColor="#252A31"
+        android:pathData="M50,9 L74,9 L85,109 L47,109 Z" />
+
+    <!-- Sunken Vertical Chisel Trench for the Exclamation Glyph -->
+    <path
+        android:fillColor="#111317"
+        android:pathData="M32,22 L68,22 L76,98 L24,98 Z" />
+    <path
+        android:fillColor="#191D23"
+        android:pathData="M34,25 L66,25 L73,95 L27,95 Z" />
+</vector>
