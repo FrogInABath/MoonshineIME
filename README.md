@@ -1,5 +1,4 @@
-# MoonshineIME (CAT S22 Flip Edition)
-# MoonshineIME (CAT S22 Flip Edition)
+
 
 ```text
                .---.             _..._              .---.             _..._
