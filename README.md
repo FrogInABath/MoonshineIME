@@ -24,12 +24,12 @@ This fork replaces the original Whisper TensorFlow Lite inference backend with S
   
 ## Attribution & Licenses
 
-* **Base IME & Application:** [woheller69/whisperIME](https://github.com/woheller69/whisperIME) (MIT License)
+* **Upstream Android Application:** [woheller69/whisperIME](https://github.com/woheller69/whisperIME), based on [vilassn/whisper_android](https://github.com/vilassn/whisper_android) by Vilas Ninawe (MIT License)
 * **ASR Architecture:** [Useful Sensors - Moonshine](https://github.com/usefulsensors/moonshine) (MIT License)
 * **On-Device Inference:** [k2-fsa/sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) (Apache-2.0)
 * **Runtime:** [Microsoft ONNX Runtime](https://github.com/microsoft/onnxruntime) (MIT License)
-* **Voice Activity Detection:** [gkonovalov/android-vad](https://github.com/gkonovalov/android-vad) (MIT License)[cite: 13]
-* **Chinese Conversion:** [houbb/opencc4j](https://github.com/houbb/opencc4j) (Apache-2.0)[cite: 11, 13]
+* **Voice Activity Detection:** [gkonovalov/android-vad](https://github.com/gkonovalov/android-vad) (MIT License)
+* **Chinese Conversion:** [houbb/opencc4j](https://github.com/houbb/opencc4j) (Apache-2.0)
 ---
 
 ## Setup & Deployment
