@@ -1,0 +1,43 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="54dp"
+    android:viewportWidth="320"
+    android:viewportHeight="54">
+
+    <!-- Heavy Tan Canvas / Vellum Base -->
+    <path
+        android:fillColor="#CBB48C"
+        android:pathData="M0,0 h320 v54 h-320 z" />
+
+    <!-- Dark Weathered Fiber Gradient & Vignette Borders -->
+    <path
+        android:fillColor="#BAA178"
+        android:pathData="M0,0 h320 v6 h-320 z M0,48 h320 v6 h-320 z" />
+    <path
+        android:fillColor="#A88E64"
+        android:pathData="M0,0 h320 v2 h-320 z M0,52 h320 v2 h-320 z" />
+
+    <!-- Worn Canvas Warp/Weft Grain Ticks (Earthy Fabric Weave) -->
+    <path
+        android:strokeColor="#B29971"
+        android:strokeWidth="1"
+        android:pathData="M12,8 v6 M28,14 v8 M44,6 v7 M60,18 v6 M76,10 v8 M92,16 v7 M108,8 v6 M124,14 v8 M140,6 v7 M156,18 v6 M172,10 v8 M188,16 v7 M204,8 v6 M220,14 v8 M236,6 v7 M252,18 v6 M268,10 v8 M284,16 v7 M300,8 v6 M312,14 v8" />
+    <path
+        android:strokeColor="#C0A77E"
+        android:strokeWidth="1"
+        android:pathData="M20,26 v8 M36,32 v7 M52,24 v8 M68,34 v6 M84,28 v8 M100,32 v7 M116,24 v8 M132,34 v6 M148,28 v8 M164,32 v7 M180,24 v8 M196,34 v6 M212,28 v8 M228,32 v7 M244,24 v8 M260,34 v6 M276,28 v8 M292,32 v7 M308,24 v8" />
+    <path
+        android:strokeColor="#B29971"
+        android:strokeWidth="1"
+        android:pathData="M14,40 v7 M30,44 v6 M46,38 v8 M62,44 v6 M78,38 v8 M94,42 v7 M110,40 v6 M126,44 v7 M142,38 v8 M158,44 v6 M174,38 v8 M190,42 v7 M206,40 v6 M222,44 v7 M238,38 v8 M254,44 v6 M270,38 v8 M286,42 v7 M302,40 v6" />
+
+    <!-- Leather Stitching Cord Across Top and Bottom -->
+    <path
+        android:strokeColor="#6E5434"
+        android:strokeWidth="1.5"
+        android:pathData="M4,3 h6 M16,3 h6 M28,3 h6 M40,3 h6 M52,3 h6 M64,3 h6 M76,3 h6 M88,3 h6 M100,3 h6 M112,3 h6 M124,3 h6 M136,3 h6 M148,3 h6 M160,3 h6 M172,3 h6 M184,3 h6 M196,3 h6 M208,3 h6 M220,3 h6 M232,3 h6 M244,3 h6 M256,3 h6 M268,3 h6 M280,3 h6 M292,3 h6 M304,3 h6 M314,3 h4" />
+    <path
+        android:strokeColor="#6E5434"
+        android:strokeWidth="1.5"
+        android:pathData="M4,51 h6 M16,51 h6 M28,51 h6 M40,51 h6 M52,51 h6 M64,51 h6 M76,51 h6 M88,51 h6 M100,51 h6 M112,51 h6 M124,51 h6 M136,51 h6 M148,51 h6 M160,51 h6 M172,51 h6 M184,51 h6 M196,51 h6 M208,51 h6 M220,51 h6 M232,51 h6 M244,51 h6 M256,51 h6 M268,51 h6 M280,51 h6 M292,51 h6 M304,51 h6 M314,51 h4" />
+</vector>
