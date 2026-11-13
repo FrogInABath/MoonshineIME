@@ -4,34 +4,59 @@
     android:viewportWidth="100"
     android:viewportHeight="120">
 
-    <!-- Chiseled Martial Shield Silhouette -->
+    <!-- Canvas Shadow -->
     <path
-        android:fillColor="#181B20"
+        android:fillColor="#382E1E"
+        android:pathData="M20,9 L82,9 L92,65 L50,117 L8,65 Z" />
+
+    <!-- Chipped Shield Outline -->
+    <path
+        android:fillColor="#15181C"
         android:pathData="M20,6 L80,6 L90,62 L50,114 L10,62 Z" />
 
-    <!-- Sunlit Crest & Left Facet Edge -->
+    <!-- Sunlit Crest Edge -->
     <path
-        android:fillColor="#727D8C"
+        android:fillColor="#687382"
         android:pathData="M20,6 L80,6 L78,9 L22,9 L13,62 L50,111 L50,114 L10,62 Z" />
 
     <!-- Shield Face Body -->
     <path
-        android:fillColor="#333942"
+        android:fillColor="#2D333B"
         android:pathData="M22,9 L78,9 L87,62 L50,111 L13,62 Z" />
 
-    <!-- Chiseled Chevron Split Facet -->
+    <!-- Weathering Battle Gouges & Fissures -->
     <path
-        android:fillColor="#424A55"
+        android:strokeColor="#0F1215"
+        android:strokeWidth="1.8"
+        android:pathData="M22,9 L38,26 L34,44 M80,24 L68,38 L74,56" />
+    <path
+        android:strokeColor="#525C6B"
+        android:strokeWidth="0.8"
+        android:pathData="M23,10 L39,27 L35,45 M81,25 L69,39 L75,57" />
+
+    <path
+        android:fillColor="#3A424D"
         android:pathData="M22,9 L50,9 L50,111 L13,62 Z" />
     <path
-        android:fillColor="#23272E"
+        android:fillColor="#21252C"
         android:pathData="M50,9 L78,9 L87,62 L50,111 Z" />
 
-    <!-- Sunken Shield Hearth for the Glyph -->
+    <!-- Deep Incised Shield Bed -->
     <path
-        android:fillColor="#111317"
-        android:pathData="M30,22 L70,22 L78,60 L50,96 L22,60 Z" />
+        android:fillColor="#0A0C0E"
+        android:pathData="M29,21 L71,21 L79,61 L50,97 L21,61 Z" />
     <path
-        android:fillColor="#181B21"
-        android:pathData="M32,25 L68,25 L75,59 L50,93 L25,59 Z" />
+        android:fillColor="#16191E"
+        android:pathData="M32,24 L68,24 L75,60 L50,94 L25,60 Z" />
+    <path
+        android:fillColor="#3A424E"
+        android:pathData="M21,61 L50,97 L79,61 L75,60 L50,94 L25,60 Z" />
+
+    <!-- Moss Clinging in Shield Bottom Apex -->
+    <path
+        android:fillColor="#2E4A23"
+        android:pathData="M44,98 Q50,92 56,98 Q52,112 46,110 Z M76,58 Q86,52 84,66 Q76,70 76,58 Z" />
+    <path
+        android:fillColor="#52783D"
+        android:pathData="M46,99 Q50,95 53,99 Q51,108 47,107 Z M78,59 Q83,55 82,63 Q77,66 78,59 Z" />
 </vector>
