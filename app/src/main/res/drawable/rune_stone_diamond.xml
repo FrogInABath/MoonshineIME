@@ -4,34 +4,60 @@
     android:viewportWidth="100"
     android:viewportHeight="120">
 
-    <!-- Dark Chiseled Outer Diamond Base -->
+    <!-- Canvas Shadow -->
     <path
-        android:fillColor="#181B20"
-        android:pathData="M50,4 L94,58 L50,114 L6,58 Z" />
+        android:fillColor="#382E1E"
+        android:pathData="M50,7 L96,61 L50,117 L4,61 Z" />
 
-    <!-- Top Highlighted Crystal Ridge -->
+    <!-- Chipped Diamond Boundary -->
     <path
-        android:fillColor="#768190"
+        android:fillColor="#15181D"
+        android:pathData="M50,4 L94,58 L88,64 L50,114 L6,58 L12,52 Z" />
+
+    <!-- Light Catch Line -->
+    <path
+        android:fillColor="#687382"
         android:pathData="M50,4 L94,58 L90,59 L50,8 L10,59 L6,58 Z" />
 
-    <!-- Main Diamond Facet Body -->
+    <!-- Crystalline Slate Body -->
     <path
-        android:fillColor="#353B44"
+        android:fillColor="#2D333B"
         android:pathData="M50,8 L90,58 L50,110 L10,58 Z" />
 
-    <!-- Crystalline Facet Splits -->
+    <!-- Jagged Transverse Crack -->
     <path
-        android:fillColor="#454D58"
+        android:strokeColor="#101317"
+        android:strokeWidth="1.8"
+        android:pathData="M50,8 L44,28 L52,42 L46,62 L50,80" />
+    <path
+        android:strokeColor="#566270"
+        android:strokeWidth="0.8"
+        android:pathData="M50,9 L44,29 L52,43 L46,63 L50,81" />
+
+    <!-- Facet Splits -->
+    <path
+        android:fillColor="#3A424D"
         android:pathData="M50,8 L90,58 L50,58 Z M10,58 L50,8 L50,58 Z" />
     <path
-        android:fillColor="#242930"
+        android:fillColor="#21262D"
         android:pathData="M90,58 L50,110 L50,58 Z M10,58 L50,110 L50,58 Z" />
 
-    <!-- Sunken Diamond Rune Bed -->
+    <!-- Deep Incised Diamond Socket -->
     <path
-        android:fillColor="#111317"
-        android:pathData="M50,24 L76,58 L50,94 L24,58 Z" />
+        android:fillColor="#0A0C0F"
+        android:pathData="M50,23 L77,58 L50,95 L23,58 Z" />
     <path
-        android:fillColor="#191C22"
-        android:pathData="M50,28 L72,58 L50,90 L28,58 Z" />
+        android:fillColor="#171A20"
+        android:pathData="M50,27 L73,58 L50,91 L27,58 Z" />
+    <path
+        android:fillColor="#3C4450"
+        android:pathData="M23,58 L50,95 L77,58 L73,58 L50,91 L27,58 Z" />
+
+    <!-- Overgrown Moss on Bottom Crystal Points -->
+    <path
+        android:fillColor="#2E4A23"
+        android:pathData="M44,98 Q50,92 58,98 Q52,112 46,110 Z M8,54 Q16,48 18,58 Q12,66 8,54 Z" />
+    <path
+        android:fillColor="#52783D"
+        android:pathData="M46,99 Q50,95 55,99 Q51,108 47,107 Z M10,54 Q15,50 16,56 Q12,62 10,54 Z" />
 </vector>
