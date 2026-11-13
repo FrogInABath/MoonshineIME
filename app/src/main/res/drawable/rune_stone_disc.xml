@@ -1,0 +1,39 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="38dp"
+    android:height="48dp"
+    android:viewportWidth="100"
+    android:viewportHeight="120">
+
+    <!-- Chiseled Circular Shadow/Border -->
+    <path
+        android:fillColor="#171A1E"
+        android:pathData="M50,8 C76,8 94,28 94,58 C94,88 76,110 50,110 C24,110 6,88 6,58 C6,28 24,8 50,8 Z" />
+
+    <!-- Top Sunlit Rim -->
+    <path
+        android:fillColor="#76808E"
+        android:pathData="M50,8 C74,8 91,26 92,54 C90,54 87,30 50,11 C26,11 11,28 10,54 C8,54 9,27 50,8 Z" />
+
+    <!-- Main Disc Face -->
+    <path
+        android:fillColor="#323841"
+        android:pathData="M50,11 C73,11 91,29 91,58 C91,86 73,107 50,107 C27,107 9,86 9,58 C9,29 27,11 50,11 Z" />
+
+    <!-- Chipped Weathering Grooves -->
+    <path
+        android:strokeColor="#242830"
+        android:strokeWidth="1.5"
+        android:pathData="M50,11 L50,30 M91,58 L72,58 M9,58 L28,58 M50,107 L50,88 M22,28 L36,40 M78,88 L64,76" />
+    <path
+        android:strokeColor="#4E5664"
+        android:strokeWidth="1.2"
+        android:pathData="M23,29 L37,41 M79,89 L65,77" />
+
+    <!-- Sunken Circular Bed -->
+    <path
+        android:fillColor="#111317"
+        android:pathData="M50,26 C68,26 80,40 80,58 C80,76 68,91 50,91 C32,91 20,76 20,58 C20,40 32,26 50,26 Z" />
+    <path
+        android:fillColor="#191D23"
+        android:pathData="M50,29 C66,29 77,42 77,58 C77,74 66,88 50,88 C34,88 23,74 23,58 C23,42 34,29 50,29 Z" />
+</vector>
