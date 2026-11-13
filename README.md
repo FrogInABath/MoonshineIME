@@ -9,7 +9,7 @@ This fork replaces the original Whisper TensorFlow Lite inference backend with S
 ### 1. Inference Engine: Whisper TFLite → Moonshine Tiny (INT8)
 * **Backend:** Replaced the Whisper TFLite runtime with `sherpa-onnx` running the **Moonshine Tiny (INT8 quantized)** model architecture.
 * **Architecture:** Targeted and compiled with native libraries for 32-bit ARM (`armeabi-v7a`) to run locally on the Qualcomm Snapdragon 215 chipset.
-* **Latency:** Near-instant local transcription without network dependencies or thermal throttling.
+* **Latency:** Near-instant local transcription without network dependencies.
 
 ### 2. Hardware Push-to-Talk (Orange Side Button)
 * **Key Interception:** Listens for OEM keycode `269` (`KEYCODE_PTT`), mapping the physical orange Action button directly to speech recognition.
