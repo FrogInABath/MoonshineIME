@@ -1,46 +1,29 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="480dp"
-    android:height="48dp"
-    android:viewportWidth="120"
-    android:viewportHeight="12">
+    android:width="320dp"
+    android:height="52dp"
+    android:viewportWidth="320"
+    android:viewportHeight="52">
 
-    <!-- Deep moss forest floor background -->
+    <!-- Solid Bog-Oak Floor (No stretching or seams) -->
     <path
-        android:fillColor="#152216"
-        android:pathData="M0,0 h120 v12 h-120 z" />
+        android:fillColor="#151915"
+        android:pathData="M0,0 h320 v52 h-320 z" />
 
-    <!-- Distant pixel foliage strip -->
+    <!-- Top Pixel Moss Trim Line -->
     <path
-        android:fillColor="#1E3320"
-        android:pathData="M0,0 h120 v3 h-120 z" />
-
-    <!-- Pixel Tree 1 (x: 4) -->
-    <path android:fillColor="#4E3118" android:pathData="M7,8 h2 v4 h-2 z" /> <!-- Trunk -->
-    <path android:fillColor="#2D6A35" android:pathData="M5,4 h6 v4 h-6 z M6,2 h4 v2 h-4 z" /> <!-- Crown -->
-    <path android:fillColor="#4E9F57" android:pathData="M6,3 h2 v2 h-2 z M7,5 h3 v2 h-3 z" /> <!-- Leaf highlight -->
-
-    <!-- Pixel Tree 2 (x: 28) -->
-    <path android:fillColor="#4E3118" android:pathData="M31,8 h2 v4 h-2 z" />
-    <path android:fillColor="#2D6A35" android:pathData="M29,4 h6 v4 h-6 z M30,2 h4 v2 h-4 z" />
-    <path android:fillColor="#4E9F57" android:pathData="M30,3 h2 v2 h-2 z M31,5 h3 v2 h-3 z" />
-
-    <!-- Pixel Tree 3 (x: 55) -->
-    <path android:fillColor="#4E3118" android:pathData="M58,8 h2 v4 h-2 z" />
-    <path android:fillColor="#2D6A35" android:pathData="M56,4 h6 v4 h-6 z M57,2 h4 v2 h-4 z" />
-    <path android:fillColor="#4E9F57" android:pathData="M57,3 h2 v2 h-2 z M58,5 h3 v2 h-3 z" />
-
-    <!-- Pixel Tree 4 (x: 82) -->
-    <path android:fillColor="#4E3118" android:pathData="M85,8 h2 v4 h-2 z" />
-    <path android:fillColor="#2D6A35" android:pathData="M83,4 h6 v4 h-6 z M84,2 h4 v2 h-4 z" />
-    <path android:fillColor="#4E9F57" android:pathData="M84,3 h2 v2 h-2 z M85,5 h3 v2 h-3 z" />
-
-    <!-- Pixel Tree 5 (x: 108) -->
-    <path android:fillColor="#4E3118" android:pathData="M111,8 h2 v4 h-2 z" />
-    <path android:fillColor="#2D6A35" android:pathData="M109,4 h6 v4 h-6 z M110,2 h4 v2 h-4 z" />
-    <path android:fillColor="#4E9F57" android:pathData="M110,3 h2 v2 h-2 z M111,5 h3 v2 h-3 z" />
-
-    <!-- Upper soil trim line -->
+        android:fillColor="#243825"
+        android:pathData="M0,0 h320 v2 h-320 z" />
     <path
-        android:fillColor="#264028"
-        android:pathData="M0,11 h120 v1 h-120 z" />
+        android:fillColor="#4D7846"
+        android:pathData="M0,2 h320 v1 h-320 z" />
+
+    <!-- Subtle Pixel Leaves on Deck Trim -->
+    <path
+        android:fillColor="#76B559"
+        android:pathData="M8,1 h4 v1 h-4 z M24,2 h3 v1 h-3 z M56,1 h5 v1 h-5 z M88,2 h4 v1 h-4 z M120,1 h3 v1 h-3 z M160,2 h5 v1 h-5 z M204,1 h4 v1 h-4 z M240,2 h3 v1 h-3 z M280,1 h5 v1 h-5 z" />
+
+    <!-- Bottom Bevel Edge -->
+    <path
+        android:fillColor="#0D100D"
+        android:pathData="M0,50 h320 v2 h-320 z" />
 </vector>
