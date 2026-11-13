@@ -4,80 +4,89 @@
     android:viewportWidth="100"
     android:viewportHeight="100">
 
-    <!-- Outer Coin Drop Shadow -->
-    <path
-        android:fillColor="#15000000"
-        android:pathData="M50,4 C76,4 97,25 97,51 C97,77 76,98 50,98 C24,98 3,77 3,51 C3,25 24,4 50,4 Z" />
-
-    <!-- Outer Chiseled Silver Rim -->
+    <!-- Outer Beveled Silver Rim -->
     <path
         android:fillColor="#3A3E45"
         android:pathData="M50,2 C76.5,2 98,23.5 98,50 C98,76.5 76.5,98 50,98 C23.5,98 2,76.5 2,50 C2,23.5 23.5,2 50,2 Z" />
 
-    <!-- Outer Rim Highlight (Top-Left Light Source) -->
+    <!-- Outer Specular Highlight -->
     <path
         android:fillColor="#E2E7EC"
         android:pathData="M50,4 C75.4,4 96,24.6 96,50 C96,51 95,51 95,50 C95,25.2 74.8,5 50,5 C25.2,5 5,25.2 5,50 C5,51 4,51 4,50 C4,24.6 24.6,4 50,4 Z" />
 
-    <!-- Beveled Coin Trench -->
+    <!-- Coin Channel Trench -->
     <path
         android:fillColor="#1D2024"
         android:pathData="M50,7 C73.7,7 93,26.3 93,50 C93,73.7 73.7,93 50,93 C26.3,93 7,73.7 7,50 C7,26.3 26.3,7 50,7 Z" />
 
-    <!-- Inner Coin Face (Brushed Silver) -->
+    <!-- Brushed Coin Face Base -->
     <path
-        android:fillColor="#7B838F"
+        android:fillColor="#707884"
         android:pathData="M50,9 C72.6,9 91,27.4 91,50 C91,72.6 72.6,91 50,91 C27.4,91 9,72.6 9,50 C9,27.4 27.4,9 50,9 Z" />
 
-    <!-- Coin Radial Luster / Metallic Sheen -->
+    <!-- Radial Luster Facets -->
     <path
-        android:fillColor="#9AA2AD"
-        android:pathData="M50,9 C65,9 78,17 85,30 L50,50 Z M50,91 C35,91 22,83 15,70 L50,50 Z" />
+        android:fillColor="#8C95A2"
+        android:pathData="M50,9 C66,9 80,18 87,32 L50,50 Z M50,91 C34,91 20,82 13,68 L50,50 Z" />
     <path
-        android:fillColor="#BFC6D0"
-        android:pathData="M85,30 C90,39 91,45 91,50 L50,50 Z M15,70 C10,61 9,55 9,50 L50,50 Z" />
+        android:fillColor="#AAB3C0"
+        android:pathData="M87,32 C91,40 91,46 91,50 L50,50 Z M13,68 C9,60 9,54 9,50 L50,50 Z" />
 
-    <!-- Micro-Gear / Coin Milling Ticks -->
+    <!-- Outer Coin Milling Ticks -->
     <path
-        android:fillColor="#3A3E45"
-        android:pathData="M50,10 L50,13 M50,87 L50,90 M10,50 L13,50 M87,50 L90,50 M22,22 L24,24 M76,76 L78,78 M22,78 L24,76 M76,24 L78,22"
-        android:strokeWidth="1.5"
-        android:strokeColor="#3A3E45" />
-
-    <!-- Inner Engraved Circle -->
-    <path
-        android:fillColor="#00000000"
-        android:strokeColor="#2B2F36"
+        android:strokeColor="#2E3238"
         android:strokeWidth="1.2"
-        android:pathData="M50,18 C67.7,18 82,32.3 82,50 C82,67.7 67.7,82 50,82 C32.3,82 18,67.7 18,50 C18,32.3 32.3,18 50,18 Z" />
+        android:pathData="M50,9 L50,13 M50,87 L50,91 M9,50 L13,50 M87,50 L91,50 M21,21 L24,24 M79,79 L76,76 M21,79 L24,76 M79,21 L76,24" />
 
-    <!-- ==================== HD CYBERSIGIL ==================== -->
-    <!-- Shadow / Trench Depth of Cybersigil -->
-    <path
-        android:fillColor="#15171B"
-        android:pathData="M50,21 L53,34 L65,26 L58,38 L74,38 L62,46 L79,50 L62,54 L74,62 L58,62 L65,74 L53,66 L50,79 L47,66 L35,74 L42,62 L26,62 L38,54 L21,50 L38,46 L26,38 L42,38 L35,26 L47,34 Z" />
+    <!-- ==================== SACRED GEOMETRY ==================== -->
 
-    <!-- Razor Blades: Central Spine & Horns -->
+    <!-- Concentric Golden Harmony Circles -->
     <path
-        android:fillColor="#1E232A"
-        android:strokeColor="#DCE2E8"
-        android:strokeWidth="1"
-        android:pathData="M50,23 L52,36 L61,29 L56,40 L71,39 L59,47 L76,50 L59,53 L71,61 L56,60 L61,71 L52,64 L50,77 L48,64 L39,71 L44,60 L29,61 L41,53 L24,50 L41,47 L29,39 L44,40 L39,29 L48,36 Z" />
-
-    <!-- Sharp Internal Biomechanical Nodes -->
+        android:strokeColor="#1F2329"
+        android:strokeWidth="1.2"
+        android:pathData="M50,24 C64.3,24 76,35.6 76,50 C76,64.3 64.3,76 50,76 C35.6,76 24,64.3 24,50 C24,35.6 35.6,24 50,24 Z" />
     <path
-        android:fillColor="#00E5FF"
-        android:pathData="M50,45 L54,50 L50,55 L46,50 Z" />
-
-    <!-- Cybersigil Geometric Ring Accents -->
-    <path
-        android:fillColor="#00000000"
-        android:strokeColor="#00E5FF"
+        android:strokeColor="#2E333C"
         android:strokeWidth="0.8"
-        android:pathData="M50,33 L50,42 M50,58 L50,67 M33,50 L42,50 M58,50 L67,50" />
-
-    <!-- Specular Light Glint on Sigil Edge -->
+        android:pathData="M50,33 C59.4,33 67,40.6 67,50 C67,59.4 59.4,67 50,67 C40.6,67 33,50.6 33,50 C33,40.6 40.6,33 50,33 Z" />
     <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M50,23 L51,30 L50,32 L49,30 Z M76,50 L70,49 L68,50 L70,51 Z M24,50 L30,49 L32,50 L30,51 Z M50,77 L51,70 L50,68 L49,70 Z" />
+        android:strokeColor="#2E333C"
+        android:strokeWidth="0.8"
+        android:pathData="M50,40 C55.5,40 60,44.5 60,50 C60,55.5 55.5,60 50,60 C44.5,60 40,55.5 40,50 C40,44.5 44.5,40 50,40 Z" />
+
+    <!-- Geometric Alignment Hexagram Lines (12-Fold Radial Axis) -->
+    <path
+        android:strokeColor="#252B33"
+        android:strokeWidth="0.8"
+        android:pathData="M50,18 L50,82 M18,50 L82,50 M27,27 L73,73 M27,73 L73,27 M34,22 L66,78 M34,78 L66,22 M22,34 L78,66 M22,66 L78,34" />
+
+    <!-- Shadow Depth of Primary Logarithmic Spiral -->
+    <path
+        android:strokeColor="#121418"
+        android:strokeWidth="3.2"
+        android:fillColor="#00000000"
+        android:pathData="M50,50 C50,49 51,48 52,48 C54,48 55,50 54,53 C52,56 47,56 45,51 C42,45 46,38 53,37 C62,35 69,42 68,52 C67,64 56,72 43,70 C28,68 18,54 21,38 C24,19 41,8 59,11 C80,15 93,35 89,57" />
+
+    <!-- Primary Sacred Fibonacci Spiral (Polished White Silver Core) -->
+    <path
+        android:strokeColor="#E8ECEF"
+        android:strokeWidth="1.8"
+        android:fillColor="#00000000"
+        android:pathData="M50,50 C50,49 51,48 52,48 C54,48 55,50 54,53 C52,56 47,56 45,51 C42,45 46,38 53,37 C62,35 69,42 68,52 C67,64 56,72 43,70 C28,68 18,54 21,38 C24,19 41,8 59,11 C80,15 93,35 89,57" />
+
+    <!-- Secondary Counter-Harmonic Geometric Spiral -->
+    <path
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="1.0"
+        android:fillColor="#00000000"
+        android:pathData="M50,50 C50,51 49,52 48,52 C46,52 45,50 46,47 C48,44 53,44 55,49 C58,55 54,62 47,63 C38,65 31,58 32,48 C33,36 44,28 57,30 C72,32 82,46 79,62 C76,81 59,92 41,89" />
+
+    <!-- Sacred Vertex Nodes (Diamond Points along the Path) -->
+    <path android:fillColor="#00E5FF" android:pathData="M50,48 L52,50 L50,52 L48,50 Z" />
+    <path android:fillColor="#00E5FF" android:pathData="M54,53 L56,55 L54,57 L52,55 Z" />
+    <path android:fillColor="#00E5FF" android:pathData="M45,51 L47,53 L45,55 L43,53 Z" />
+    <path android:fillColor="#00E5FF" android:pathData="M53,37 L55,39 L53,41 L51,39 Z" />
+    <path android:fillColor="#00E5FF" android:pathData="M68,52 L70,54 L68,56 L66,54 Z" />
+    <path android:fillColor="#00E5FF" android:pathData="M43,70 L45,72 L43,74 L41,72 Z" />
+    <path android:fillColor="#00E5FF" android:pathData="M21,38 L23,40 L21,42 L19,40 Z" />
 </vector>
