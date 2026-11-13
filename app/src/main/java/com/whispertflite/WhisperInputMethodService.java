@@ -31,6 +31,7 @@ import java.io.File;
 
 public class WhisperInputMethodService extends InputMethodService {
     private static final String TAG = "WhisperInputMethodService";
+    private static final int KEYCODE_PTT = 269;
 
     private TextView btnRecord;
     private TextView btnKeyboard;
