@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <!-- Soft Drop Shadow Underneath -->
+    <path
+        android:fillColor="#26000000"
+        android:pathData="M 28,86 C 40,94 56,94 68,86 C 58,82 38,82 28,86 Z" />
+
+    <!-- Nut Body (Base Shell) -->
+    <path
+        android:fillColor="#8C5329"
+        android:pathData="M 22,40 C 20,62 34,84 48,88 C 62,84 76,62 74,40 Z" />
+
+    <!-- Nut Body Shading (Darker Rim / Bevel) -->
+    <path
+        android:fillColor="#683815"
+        android:pathData="M 48,88 C 62,84 76,62 74,40 C 66,42 58,45 48,46 C 38,45 30,42 22,40 C 20,62 34,84 48,88 Z" />
+
+    <!-- Nut Core Warm Highlight -->
+    <path
+        android:fillColor="#AA6936"
+        android:pathData="M 26,44 C 26,60 36,78 48,83 C 54,78 61,67 63,55 C 50,56 36,52 26,44 Z" />
+
+    <!-- Specular Gloss Reflection (Light Glare) -->
+    <path
+        android:fillColor="#33FFFFFF"
+        android:pathData="M 27,48 C 26,58 31,69 38,76 C 36,70 33,60 33,50 C 33,48 31,48 27,48 Z" />
+
+    <!-- Acorn Cap (Cupule Base) -->
+    <path
+        android:fillColor="#4A2E16"
+        android:pathData="M 18,36 C 18,22 32,18 48,18 C 64,18 78,22 78,36 C 78,42 66,45 48,45 C 30,45 18,42 18,36 Z" />
+
+    <!-- Cap Woody Rim -->
+    <path
+        android:fillColor="#38210C"
+        android:pathData="M 18,36 C 26,41 38,44 48,44 C 58,44 70,41 78,36 C 78,39 68,43 48,43 C 28,43 18,39 18,36 Z" />
+
+    <!-- Cap Scale Texture Pattern -->
+    <path
+        android:strokeColor="#5E3C1F"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:pathData="
+            M 30,26 Q 34,29 38,26
+            M 42,24 Q 48,27 54,24
+            M 58,26 Q 62,29 66,26
+            M 24,32 Q 30,36 36,32
+            M 42,32 Q 48,36 54,32
+            M 60,32 Q 66,36 72,32
+            M 34,38 Q 40,41 46,38
+            M 50,38 Q 56,41 62,38" />
+
+    <!-- Stem (Peduncle) -->
+    <path
+        android:fillColor="#3A220F"
+        android:pathData="M 45,19 C 44,11 40,8 41,5 C 43,5 47,8 49,19 Z" />
+
+</vector>
