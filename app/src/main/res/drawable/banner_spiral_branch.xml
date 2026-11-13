@@ -1,0 +1,60 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="14dp"
+    android:viewportWidth="320"
+    android:viewportHeight="14">
+
+    <!-- Deep Background Strip Behind Branch -->
+    <path
+        android:fillColor="#0E130E"
+        android:pathData="M0,0 h320 v14 h-320 z" />
+
+    <!-- Vine Spiral (Under-Pass Segments Behind Branch) -->
+    <path
+        android:strokeColor="#1E5222"
+        android:strokeWidth="2.5"
+        android:pathData="M18,11 Q28,14 38,4 M58,11 Q68,14 78,4 M98,11 Q108,14 118,4 M138,11 Q148,14 158,4 M178,11 Q188,14 198,4 M218,11 Q228,14 238,4 M258,11 Q268,14 278,4 M298,11 Q308,14 318,4" />
+
+    <!-- Main Solid Oak Branch Core -->
+    <path
+        android:fillColor="#3D2412"
+        android:pathData="M0,5 Q40,3 80,6 Q120,8 160,5 Q200,3 240,6 Q280,7 320,5 L320,10 Q280,12 240,10 Q200,8 160,10 Q120,13 80,11 Q40,9 0,10 Z" />
+
+    <!-- Branch Top Woody Bark Ridge -->
+    <path
+        android:fillColor="#5D381B"
+        android:pathData="M0,5 Q40,3 80,6 Q120,8 160,5 Q200,3 240,6 Q280,7 320,5 L320,7 Q280,9 240,8 Q200,5 160,7 Q120,10 80,8 Q40,6 0,7 Z" />
+
+    <!-- Branch Bottom Shadow Trim -->
+    <path
+        android:fillColor="#211207"
+        android:pathData="M0,9 Q40,8 80,10 Q120,12 160,9 Q200,7 240,9 Q280,11 320,9 L320,10 Q280,12 240,10 Q200,8 160,10 Q120,13 80,11 Q40,9 0,10 Z" />
+
+    <!-- Vine Spiral (Over-Pass Helical Loops Crossing Over the Branch) -->
+    <path
+        android:strokeColor="#43A047"
+        android:strokeWidth="2.8"
+        android:pathData="M-2,5 Q8,-1 18,11 M38,4 Q48,-1 58,11 M78,4 Q88,-1 98,11 M118,4 Q128,-1 138,11 M158,4 Q168,-1 178,11 M198,4 Q208,-1 218,11 M238,4 Q248,-1 258,11 M278,4 Q288,-1 298,11" />
+
+    <!-- Vine Highlight Spine -->
+    <path
+        android:strokeColor="#A5D6A7"
+        android:strokeWidth="1.0"
+        android:pathData="M-1,5 Q8,0 17,10 M39,4 Q48,0 57,10 M79,4 Q88,0 97,10 M119,4 Q128,0 137,10 M159,4 Q168,0 177,10 M199,4 Q208,0 217,10 M239,4 Q248,0 257,10 M279,4 Q288,0 297,10" />
+
+    <!-- Spiraling Leaves Sprouting Along the Loops -->
+    <!-- Top-side Leaf Clusters -->
+    <path
+        android:fillColor="#66BB6A"
+        android:pathData="M7,1 Q12,-1 15,2 Q10,3 7,1 Z M47,1 Q52,-1 55,2 Q50,3 47,1 Z M87,1 Q92,-1 95,2 Q90,3 87,1 Z M127,1 Q132,-1 135,2 Q130,3 127,1 Z M167,1 Q172,-1 175,2 Q170,3 167,1 Z M207,1 Q212,-1 215,2 Q210,3 207,1 Z M247,1 Q252,-1 255,2 Q250,3 247,1 Z M287,1 Q292,-1 295,2 Q290,3 287,1 Z" />
+
+    <!-- Bottom-side Leaf Clusters -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M19,10 Q24,14 27,11 Q23,9 19,10 Z M59,10 Q64,14 67,11 Q63,9 59,10 Z M99,10 Q104,14 107,11 Q103,9 99,10 Z M139,10 Q144,14 147,11 Q143,9 139,10 Z M179,10 Q184,14 187,11 Q183,9 179,10 Z M219,10 Q224,14 227,11 Q223,9 219,10 Z M259,10 Q264,14 267,11 Q263,9 259,10 Z M299,10 Q304,14 307,11 Q303,9 299,10 Z" />
+
+    <!-- Bottom Boundary Trim Line Separating Header from Acorn Deck -->
+    <path
+        android:fillColor="#080C08"
+        android:pathData="M0,13 h320 v1 h-320 z" />
+</vector>
