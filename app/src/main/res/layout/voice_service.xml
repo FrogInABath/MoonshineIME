@@ -30,7 +30,7 @@
         android:paddingStart="4dp"
         android:paddingEnd="4dp">
 
-        <!-- Switch back to standard/T9 keyboard[cite: 17] -->
+        <!-- Switch back to standard/T9 keyboard -->
         <TextView
             android:id="@+id/btnKeyboard"
             android:layout_width="0dp"
@@ -108,7 +108,7 @@
             android:textStyle="bold"
             android:background="?android:attr/selectableItemBackground" />
 
-        <!-- Backspace with Repeat Hold[cite: 17] -->
+        <!-- Backspace with Repeat Hold -->
         <TextView
             android:id="@+id/btnDel"
             android:layout_width="0dp"
@@ -121,7 +121,7 @@
             android:background="?android:attr/selectableItemBackground"
             android:contentDescription="@string/delete_button" />
 
-        <!-- Enter / Return[cite: 17] -->
+        <!-- Enter / Return -->
         <TextView
             android:id="@+id/btnEnter"
             android:layout_width="0dp"
@@ -135,7 +135,7 @@
             android:background="?android:attr/selectableItemBackground"
             android:contentDescription="@string/return_button" />
 
-        <!-- Compact Recording Indicator & Touch Fallback[cite: 17] -->
+        <!-- Compact Recording Indicator & Touch Fallback -->
         <TextView
             android:id="@+id/btnRecord"
             android:layout_width="0dp"
@@ -148,9 +148,19 @@
             android:background="?android:attr/selectableItemBackground"
             android:contentDescription="@string/record_button" />
 
+        <!-- Spinning Acorn Action Button -->
+        <org.woheller69.whisper.AcornButton
+            android:id="@+id/btnAcorn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:padding="6dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Acorn Action" />
+
     </LinearLayout>
 
-    <!-- Invisible placeholder retained to prevent NullPointerExceptions in legacy methods[cite: 17] -->
+    <!-- Invisible placeholder retained to prevent NullPointerExceptions in legacy methods -->
     <TextView
         android:id="@+id/tv_status"
         android:layout_width="wrap_content"
