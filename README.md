@@ -82,3 +82,22 @@ adb push encode.int8.onnx /sdcard/Android/data/org.woheller69.whisper/files/
 adb push uncached_decode.int8.onnx /sdcard/Android/data/org.woheller69.whisper/files/
 adb push cached_decode.int8.onnx /sdcard/Android/data/org.woheller69.whisper/files/
 adb push tokens.txt /sdcard/Android/data/org.woheller69.whisper/files/
+
+## Attribution & Licenses
+
+This project incorporates open-source software and model architectures licensed under permissive terms:
+
+* **Moonshine ASR Architecture:**  
+  Copyright (c) 2024 Useful Sensors, Inc.  
+  Licensed under the [MIT License](https://github.com/usefulsensors/moonshine/blob/main/LICENSE).
+
+* **Sherpa-ONNX Runtime & Android Bindings:**  
+  Copyright (c) 2022-2024 Xiaomi Corporation / k2-fsa contributors  
+  Licensed under the [Apache License 2.0](https://github.com/k2-fsa/sherpa-onnx/blob/master/LICENSE).
+
+* **Upstream whisperIME Android App:**  
+  Copyright (c) 2023-2024 woheller69 / Vilas Ninawe  
+  Licensed under the [GNU General Public License v3.0](https://github.com/woheller69/whisperIME/blob/master/LICENSE) (or MIT where applicable).
+
+* **ONNX Runtime:**  
+  Copyright (c) Microsoft Corporation. Licensed under the [MIT License](https://github.com/microsoft/onnxruntime/blob/main/LICENSE).
